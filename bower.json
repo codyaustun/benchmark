@@ -1,0 +1,20 @@
+{
+  "name": "dawn-bench",
+  "description": "Leaderboard for DAWN Deep Learning Benchmark",
+  "main": "index.js",
+  "authors": [
+    "Cody A. Coleman <codyaustun@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/stanford-futuredata/dawn-bench-web",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
