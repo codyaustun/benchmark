@@ -2,13 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gulp Test</title>
+  <title>Stanford DAWN · Deep Learning Benchmark</title>
   <!-- inject:css -->
   <!-- endinject -->
+
+  <link rel="shortcut icon" href="public/img/favicon.ico">
 </head>
 <body>  
     <!-- inject:js -->
     <!-- endinject -->
-    <h1>Hello World!</h1>
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id='navContainer'>
+        <div class="container clearfix">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">DAWN Bench</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li class="active"><a href="#">Training<span class="sr-only">(current)</span></a></li>-->
+                    <!--<li><a href="#">Inference</a></li>-->
+                <!--</ul>-->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div id="topContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>DAWN Bench</h1>
+                    <h2>Deep Learning Benchmark</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="bodyContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card" id="info-card">
+                        <div class="card-headline">
+                            <h2>What is DAWN Bench?</h2>
+                        </div>
+
+                        <!--lorem-->
+                        <p>Ornare. Donec eget tellus. Nullam molestie placerat felis. Aenean facilisis.
+                        Nunc erat. Integer in tellus. Mauris volutpat, neque vel ornare porttitor,
+                        dolor nisi sagittis dolor, sit amet bibendum orci leo blandit lacus.</p>
+
+                        <p>In id velit sodales arcu iaculis venenatis. Etiam at leo. Vivamus vitae sem.
+                        Mauris volutpat congue risus. Curabitur leo. Aenean tempor tortor eget ligula.
+                        Aenean vel augue. Vestibulum ac justo. In hac habitasse platea dictumst. Nam
+                        dignissim nisi non mauris. Donec et tortor. Morbi felis. Donec aliquet, erat eu
+                        ultrices tincidunt, lorem mi sagittis lectus, ut feugiat pede lacus quis
+                        sapien. Suspendisse porta, felis a fermentum interdum, dui nisl sodales.</p>
+                        <!--/lorem-->
+
+                        <div class="card-headline">
+                            <h2>Getting Started</h2>
+                        </div>
+
+                        <!--lorem-->
+                        <p>Diam ut dictum accumsan, magna est viverra erat, vitae imperdiet neque
+                        mauris aliquam nisl. Suspendisse blandit quam quis felis. Praesent turpis nunc,
+                        vehicula in, bibendum vitae, blandit ac, turpis. Duis rhoncus. Vestibulum
+                        metus. Morbi consectetuer felis id tortor. Etiam augue leo, cursus eget, ornare
+                        et, ornare sagittis, tellus. Fusce felis tellus, consectetuer nec, consequat
+                        at, ornare non, arcu. Maecenas condimentum sodales odio. Sed eu orci.</p>
+
+                        <p>Nullam adipiscing eros sit amet ante. Vestibulum ante. Sed quis ipsum non
+                        ligula dignissim luctus. Integer quis justo id tortor accumsan tempus. Cras
+                        vitae magna. Nunc bibendum lacinia tellus. Quisque porttitor ligula et pede.
+                        Nam erat nibh.</p>
+                        <!--/lorem-->
+
+
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2>Leaderboard</h2>
+                        </div>
+
+                        <ul class="nav nav-pills" id="leaderboard-buttons">
+                            <li role="presentation" data-board='train' class="active"><a href="#">Train</a></li>
+                            <li role="presentation" data-board='latency'><a href="#">Latency</a></li>
+                            <li role="presentation" data-board='throughput'><a href="#">Throughput</a></li>
+                        </ul>
+
+
+                        <div id="leaderboard"></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default" id='footerContainer'>
+        <div class="container clearfix">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
 </body>
 </html>
