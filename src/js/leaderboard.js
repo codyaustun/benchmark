@@ -1,16 +1,16 @@
 $(document).ready(function() {
-    $("#leaderboard-buttons li").on("click", function(e) {
+    $("#leaderboard-metrics li").on("click", function(e) {
         var el = $(this);
-        var board = el.data('board')
+        var metric = el.data('metric')
+        var task = $('#leaderboard-tasks li.active').data('task')
 
         if (!el.hasClass('active')) {
             el.siblings().removeClass('active')
             el.addClass('active')
         }
-        console.log("button clicked!" + board)
 
         $.ajax({
-            url: "leaderboard/" + board + ".html",
+            url: "leaderboard/" + task + "/" + metric + ".html",
             cache: false
         }).done(function (html) {
             $("#leaderboard").html(html);
@@ -19,5 +19,25 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('#leaderboard-buttons li.active').click();
+    $("#leaderboard-tasks li").on("click", function(e) {
+        var el = $(this);
+        var task = el.data('task')
+        var metric = $('#leaderboard-metrics li.active').data('metric')
+
+        if (!el.hasClass('active')) {
+            el.siblings().removeClass('active')
+            el.addClass('active')
+        }
+
+        $.ajax({
+            url: "leaderboard/" + task + "/" + metric + ".html",
+            cache: false
+        }).done(function (html) {
+            $("#leaderboard").html(html);
+        });
+
+        e.preventDefault();
+    });
+
+    $('#leaderboard-metrics li.active').click();
 });

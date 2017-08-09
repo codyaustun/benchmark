@@ -18,27 +18,11 @@
     <nav class="navbar navbar-default navbar-fixed-top" id='navContainer'>
         <div class="container clearfix">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="#">DAWN Bench</a>
             </div>
-            <div class="collapse navbar-collapse">
-                <!--<ul class="nav navbar-nav">-->
-                    <!--<li class="active"><a href="#">Training<span class="sr-only">(current)</span></a></li>-->
-                    <!--<li><a href="#">Inference</a></li>-->
-                <!--</ul>-->
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
-                    </ul>
-                </div>
-            </div>
+            <ul class="nav navbar-nav navbar-right visible-lg-block">
+                <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -104,11 +88,22 @@
                             <h2>Leaderboard</h2>
                         </div>
 
-                        <ul class="nav nav-pills" id="leaderboard-buttons">
-                            <li role="presentation" data-board='train' class="active"><a href="#">Train</a></li>
-                            <li role="presentation" data-board='latency'><a href="#">Latency</a></li>
-                            <li role="presentation" data-board='throughput'><a href="#">Throughput</a></li>
-                        </ul>
+                        <div class="row" id="leaderboard-controls">
+                            <div class="col-md-5">
+                                <ul class="nav nav-pills" id="leaderboard-tasks">
+                                    <li role="presentation" data-task='CIFAR10' class="active"><a href="#">CIFAR10</a></li>
+                                    <li role="presentation" data-task='SQuAD'><a href="#">SQuAD</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-7">
+                                <ul class="nav nav-pills" id="leaderboard-metrics">
+                                    <li role="presentation" data-metric='train' class="active"><a href="#">Train</a></li>
+                                    <li role="presentation" data-metric='latency'><a href="#">Latency</a></li>
+                                    <li role="presentation" data-metric='throughput'><a href="#">Throughput</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
 
                         <div id="leaderboard"></div>
@@ -122,12 +117,9 @@
 
     <nav class="navbar navbar-default" id='footerContainer'>
         <div class="container clearfix">
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
-              </ul>
-            </div>
+            </ul>
         </div>
     </nav>
 </body>
