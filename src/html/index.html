@@ -27,98 +27,51 @@
     <!-- Header -->
     <div id="topContainer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>DAWN Bench</h1>
-                    <h2>Deep Learning Benchmark</h2>
-                </div>
-            </div>
+            <h1>DAWN Bench</h1>
+            <h2>Deep Learning Benchmark</h2>
         </div>
     </div>
 
     <!-- Main Content -->
     <div id="bodyContainer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="card" id="info-card">
-                        <div class="card-headline">
-                            <h2>What is DAWN Bench?</h2>
-                        </div>
+            <div class="card" id="info-card">
+                <div class="card-headline">
+                    <h2>What is DAWN Bench?</h2>
+                </div>
 
-                        <!--lorem-->
-                        <p>Ornare. Donec eget tellus. Nullam molestie placerat felis. Aenean facilisis.
-                        Nunc erat. Integer in tellus. Mauris volutpat, neque vel ornare porttitor,
-                        dolor nisi sagittis dolor, sit amet bibendum orci leo blandit lacus.</p>
+                <!--lorem-->
+                <p>Ornare. Donec eget tellus. Nullam molestie placerat felis. Aenean facilisis.
+                Nunc erat. Integer in tellus. Mauris volutpat, neque vel ornare porttitor,
+                dolor nisi sagittis dolor, sit amet bibendum orci leo blandit lacus.</p>
 
-                        <p>In id velit sodales arcu iaculis venenatis. Etiam at leo. Vivamus vitae sem.
-                        Mauris volutpat congue risus. Curabitur leo. Aenean tempor tortor eget ligula.
-                        Aenean vel augue. Vestibulum ac justo. In hac habitasse platea dictumst. Nam
-                        dignissim nisi non mauris. Donec et tortor. Morbi felis. Donec aliquet, erat eu
-                        ultrices tincidunt, lorem mi sagittis lectus, ut feugiat pede lacus quis
-                        sapien. Suspendisse porta, felis a fermentum interdum, dui nisl sodales.</p>
-                        <!--/lorem-->
+            </div>
+            <div class="card">
+                <div class="card-headline">
+                    <h2>Leaderboard</h2>
+                </div>
 
-                        <div class="card-headline">
-                            <h2>Getting Started</h2>
-                        </div>
+                <div class="row" id="leaderboard-controls">
+                    <div class="col-md-5">
+                        <ul class="nav nav-pills" id="leaderboard-tasks">
+                            <li role="presentation" data-task='CIFAR10' class="active"><a href="#">CIFAR10</a></li>
+                            <li role="presentation" data-task='SQuAD'><a href="#">SQuAD</a></li>
+                        </ul>
+                    </div>
 
-                        <!--lorem-->
-                        <p>Diam ut dictum accumsan, magna est viverra erat, vitae imperdiet neque
-                        mauris aliquam nisl. Suspendisse blandit quam quis felis. Praesent turpis nunc,
-                        vehicula in, bibendum vitae, blandit ac, turpis. Duis rhoncus. Vestibulum
-                        metus. Morbi consectetuer felis id tortor. Etiam augue leo, cursus eget, ornare
-                        et, ornare sagittis, tellus. Fusce felis tellus, consectetuer nec, consequat
-                        at, ornare non, arcu. Maecenas condimentum sodales odio. Sed eu orci.</p>
-
-                        <p>Nullam adipiscing eros sit amet ante. Vestibulum ante. Sed quis ipsum non
-                        ligula dignissim luctus. Integer quis justo id tortor accumsan tempus. Cras
-                        vitae magna. Nunc bibendum lacinia tellus. Quisque porttitor ligula et pede.
-                        Nam erat nibh.</p>
-                        <!--/lorem-->
-
-                        <div class="card-headline">
-                            <h2>Have Questions?</h2>
-                        </div>
-
-                        <!--lorem-->
-                        <p>Sed sit amet ante. Mauris ac nibh eget risus volutpat tempor. Praesent
-                        volutpat sollicitudin dui. Sed in tellus id urna viverra.</p>
-                        <!--/lorem-->
-                        
-
-
+                    <div class="col-md-7">
+                        <ul class="nav nav-pills" id="leaderboard-metrics">
+                            <li role="presentation" data-metric='train' class="active"><a href="#">Train</a></li>
+                            <li role="presentation" data-metric='latency'><a href="#">Latency</a></li>
+                            <li role="presentation" data-metric='throughput'><a href="#">Throughput</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <div class="card">
-                        <div class="card-headline">
-                            <h2>Leaderboard</h2>
-                        </div>
-
-                        <div class="row" id="leaderboard-controls">
-                            <div class="col-md-5">
-                                <ul class="nav nav-pills" id="leaderboard-tasks">
-                                    <li role="presentation" data-task='CIFAR10' class="active"><a href="#">CIFAR10</a></li>
-                                    <li role="presentation" data-task='SQuAD'><a href="#">SQuAD</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="col-md-7">
-                                <ul class="nav nav-pills" id="leaderboard-metrics">
-                                    <li role="presentation" data-metric='train' class="active"><a href="#">Train</a></li>
-                                    <li role="presentation" data-metric='latency'><a href="#">Latency</a></li>
-                                    <li role="presentation" data-metric='throughput'><a href="#">Throughput</a></li>
-                                </ul>
-                            </div>
-                        </div>
 
 
-                        <div id="leaderboard"></div>
+                <div id="leaderboard"></div>
 
 
-                    </div>
-                </div>
             </div>
         </div>
     </div>
