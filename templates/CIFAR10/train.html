@@ -25,6 +25,10 @@ iaculis pede, at porttitor quam odio.</p>
                 </td>
                 <td>
                     {{submission.model}}
+                    <p class='author'>{{submission.author}}</p>
+                    <p class='description'>
+                        <a href="{{ submission.url }}">{{ submission.url }} </a>
+                    </p>
                 </td>
                 <td>{{ "{:0.2f}".format(submission.time) }}</td>
                 <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
