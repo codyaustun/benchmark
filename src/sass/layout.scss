@@ -19,6 +19,15 @@ body {
     .navbar-nav>.active>a, .navbar-nav>.active>a:focus,.navbar-nav>.active>a:hover {
         background-color: $brand-primary;
     }
+
+    .glyphicon {
+        color: #ffffff;
+    }
+
+    button {
+        border: 0;
+        border-radius: 0;
+    }
 }
 
 #topContainer {
@@ -35,17 +44,25 @@ body {
 
     .nav-pills>li>a {
         border-radius: 0;
-
     }
 }
 
 .card-headline{
     h2 {
         font-size: 1.4em;
+
+        a.glyphicon {
+            font-size: 0.75em;
+        }
+
+        a.glyphicon:hover {
+            text-decoration: none;
+        }
     }
 
     border-bottom: 2px solid $gray-lighter;
     margin: 1em 0;
+
 }
 
 #footerContainer {
@@ -68,7 +85,7 @@ body {
 
 }
 
-#leaderboard {
+.leaderboard {
     td, th {
         text-align: center;
     }
@@ -87,5 +104,24 @@ body {
         display: block;
         background-color: $gray;
         padding: 0 0.2em;
+    }
+}
+
+.leaderboard-controls {
+    text-align: center;
+    button {
+        background-color: $brand-primary;
+        border-radius: 0;
+        color: #ffffff;
+    }
+
+    button:hover {
+        background-color: darken($brand-primary, 10%);
+        color: #ffffff;
+    }
+
+    button:active {
+        background-color: $gray-lighter;
+        color: $brand-primary;
     }
 }

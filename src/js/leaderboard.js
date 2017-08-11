@@ -1,43 +1,68 @@
 $(document).ready(function() {
-    $("#leaderboard-metrics li").on("click", function(e) {
-        var el = $(this);
-        var metric = el.data('metric')
-        var task = $('#leaderboard-tasks li.active').data('task')
-
-        if (!el.hasClass('active')) {
-            el.siblings().removeClass('active')
-            el.addClass('active')
-        }
-
-        $.ajax({
-            url: "leaderboard/" + task + "/" + metric + ".html",
-            cache: false
-        }).done(function (html) {
-            $("#leaderboard").html(html);
-        });
-
-        e.preventDefault();
-    });
-
     $("#leaderboard-tasks li").on("click", function(e) {
         var el = $(this);
-        var task = el.data('task')
-        var metric = $('#leaderboard-metrics li.active').data('metric')
+        var task = el.data('task');
 
         if (!el.hasClass('active')) {
-            el.siblings().removeClass('active')
-            el.addClass('active')
+            el.siblings().removeClass('active');
+            el.addClass('active');
         }
 
+        maxRows = 4
         $.ajax({
-            url: "leaderboard/" + task + "/" + metric + ".html",
+            url: "leaderboard/" + task + "/time.html",
             cache: false
         }).done(function (html) {
-            $("#leaderboard").html(html);
+            $("#leaderboard-time").html(html);
+            $("#leaderboard-time tr:gt(" + maxRows + ")").hide();
+        });
+
+        $.ajax({
+            url: "leaderboard/" + task + "/cost.html",
+            cache: false
+        }).done(function (html) {
+            $("#leaderboard-cost").html(html);
+            $("#leaderboard-cost tr:gt(" + maxRows + ")").hide();
+        });
+
+        $.ajax({
+            url: "leaderboard/" + task + "/latency.html",
+            cache: false
+        }).done(function (html) {
+            $("#leaderboard-latency").html(html);
+            $("#leaderboard-latency tr:gt(" + maxRows + ")").hide();
+        });
+
+        $.ajax({
+            url: "leaderboard/" + task + "/throughput.html",
+            cache: false
+        }).done(function (html) {
+            $("#leaderboard-throughput").html(html);
+            $("#leaderboard-throughput tr:gt(" + maxRows + ")").hide();
         });
 
         e.preventDefault();
     });
 
-    $('#leaderboard-metrics li.active').click();
+    $(document).on("click", ".leaderboard-toggle", function(e) {
+        var el = $(this);
+        var board = el.data('board');
+        var action = el.text();
+        var rows = $(board + ' tr:gt(4)');
+
+        console.log('here')
+        console.log(board)
+        console.log(action)
+
+        if (action == 'Expand') {
+            rows.show();
+            el.text('Collapse');
+        } else if (action == 'Collapse') {
+            rows.hide();
+            el.text('Expand');
+        }
+        e.preventDefault();
+    });
+
+    $('#leaderboard-tasks li.active').click();
 });

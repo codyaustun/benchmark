@@ -16,18 +16,30 @@
     <nav class="navbar navbar-default navbar-fixed-top" id='navContainer'>
         <div class="container clearfix">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">DAWN Bench</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+                <a class="navbar-brand" href="#">DAWNBench</a>
             </div>
-            <ul class="nav navbar-nav navbar-right visible-lg-block">
-                <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
-            </ul>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" id='leaderboard-tasks'>
+                    <li class="active" data-task='CIFAR10'><a href="#">CIFAR10<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#" data-task='SQuAD'>SQuAD</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right visible-lg-block">
+                    <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
         </div>
     </nav>
 
     <!-- Header -->
     <div id="topContainer">
         <div class="container">
-            <h1>DAWN Bench</h1>
+            <h1>DAWNBench</h1>
             <h2>Deep Learning Benchmark</h2>
         </div>
     </div>
@@ -37,7 +49,7 @@
         <div class="container">
             <div class="card" id="info-card">
                 <div class="card-headline">
-                    <h2>What is DAWN Bench?</h2>
+                    <h2>What is DAWNBench?</h2>
                 </div>
 
                 <!--lorem-->
@@ -46,33 +58,58 @@
                 dolor nisi sagittis dolor, sit amet bibendum orci leo blandit lacus.</p>
 
             </div>
+            
             <div class="card">
                 <div class="card-headline">
-                    <h2>Leaderboard</h2>
+                    <h2 id='time'>
+                        Time
+                        <a href="#time" class="glyphicon glyphicon-link"></a>
+                    </h2>
                 </div>
 
-                <div class="row" id="leaderboard-controls">
-                    <div class="col-md-5">
-                        <ul class="nav nav-pills" id="leaderboard-tasks">
-                            <li role="presentation" data-task='CIFAR10' class="active"><a href="#">CIFAR10</a></li>
-                            <li role="presentation" data-task='SQuAD'><a href="#">SQuAD</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-7">
-                        <ul class="nav nav-pills" id="leaderboard-metrics">
-                            <li role="presentation" data-metric='train' class="active"><a href="#">Train</a></li>
-                            <li role="presentation" data-metric='latency'><a href="#">Latency</a></li>
-                            <li role="presentation" data-metric='throughput'><a href="#">Throughput</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <div id="leaderboard"></div>
-
+                <div class="leaderboard" id='leaderboard-time' data-metric='time'></div>
 
             </div>
+
+            
+            <div class="card">
+                <div class="card-headline">
+                    <h2 id='cost'>
+                        Cost
+                        <a href="#cost" class="glyphicon glyphicon-link"></a>
+                    </h2>
+                </div>
+
+                <div class="leaderboard" id='leaderboard-cost' data-metric='cost'></div>
+
+            </div>
+
+
+            <div class="card">
+                <div class="card-headline">
+                    <h2 id='latency'>
+                        Latency
+                        <a href="#latency" class="glyphicon glyphicon-link"></a>
+                    </h2>
+                </div>
+
+                <div class="leaderboard" id='leaderboard-latency' data-metric='latency'></div>
+
+            </div>
+
+
+            <div class="card">
+                <div class="card-headline">
+                    <h2 id='throughput'>
+                        Throughput
+                        <a href="#throughput" class="glyphicon glyphicon-link"></a>
+                    </h2>
+                </div>
+
+                <div class="leaderboard" id='leaderboard-throughput' data-metric='thoughput'></div>
+
+            </div>
+
         </div>
     </div>
 
