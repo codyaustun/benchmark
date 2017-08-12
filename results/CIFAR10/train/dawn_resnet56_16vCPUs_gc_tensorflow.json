@@ -1,0 +1,11 @@
+{
+    "author": "Stanford DAWN",
+    "framework": "TensorFlow",
+    "codeURL": "https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow",
+    "model": "ResNet 56",
+    "hardware": "60 GB / 16 CPU (Google Cloud [n1-standard-16])",
+    "trainingTime": 25.935676822397443,
+    "accuracy": 93.04,
+    "cost": 13.823715746337838,
+    "timestamp": "11 August, 2017"
+}

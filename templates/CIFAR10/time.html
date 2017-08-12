@@ -14,7 +14,9 @@ iaculis pede, at porttitor quam odio.</p>
                 <th>Rank</th>
                 <th>Model</th>
                 <th>Time (in hours)</th>
-                <th>Accuracy</th>
+                <th>Max Accuracy</th>
+                <th>Hardware</th>
+                <th>Framework</th>
             </tr>
         </thead>
         <tbody>
@@ -27,11 +29,13 @@ iaculis pede, at porttitor quam odio.</p>
                     {{submission.model}}
                     <p class='author'>{{submission.author}}</p>
                     <p class='description'>
-                        <a href="{{ submission.url }}">{{ submission.url }} </a>
+                        <a href="{{ submission.codeURL }}">source</a>
                     </p>
                 </td>
-                <td>{{ "{:0.2f}".format(submission.time) }}</td>
+                <td>{{ "{:0.2f}".format(submission.trainingTime) }}</td>
                 <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
+                <td> {{ submission.hardware }} </td>
+                <td> {{ submission.framework }} </td>
             </tr>
         {% endfor %}
         </tbody>

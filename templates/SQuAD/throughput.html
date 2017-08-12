@@ -1,0 +1,49 @@
+
+<!--lorem-->
+<p>Duis ac erat. Etiam consequat. Integer sed est eu elit pellentesque dapibus.
+Duis venenatis magna feugiat nisi. Vestibulum et turpis. Maecenas a enim.
+Suspendisse ultricies ornare justo. Fusce sit amet nisi sed arcu condimentum
+venenatis. Vivamus dui. Nunc accumsan, quam a fermentum mattis, magna sapien
+iaculis pede, at porttitor quam odio.</p>
+<!--/lorem-->
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>Throughput (questions / second)</th>
+                <th>Max F1 Score</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for submission in submissions %}
+            <tr>
+                <td>
+                    {{submission.rank}}
+                </td>
+                <td>
+                    {{submission.model}}
+                    <p class='author'>{{submission.author}}</p>
+                    <p class='description'>
+                        <a href="{{ submission.codeURL }}">source</a>
+                    </p>
+                </td>
+                <td>{{ "{:0.2f}".format(submission.batchThroughput) }}</td>
+                <td>{{ "{:0.2f}".format(submission.f1Score) }}</td>
+                <td> {{ submission.hardware }} </td>
+                <td> {{ submission.framework }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-throughput'>Expand</button>
+    </div>
+</div>

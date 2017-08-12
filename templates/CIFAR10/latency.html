@@ -7,24 +7,43 @@ venenatis. Vivamus dui. Nunc accumsan, quam a fermentum mattis, magna sapien
 iaculis pede, at porttitor quam odio.</p>
 <!--/lorem-->
 
-    
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
                 <th>Rank</th>
                 <th>Model</th>
-                <th>Time (in milliseconds)</th>
-                <th>Accuracy</th>
+                <th>1-example Latency (milliseconds)</th>
+                <th>Max Accuracy</th>
+                <th>Hardware</th>
+                <th>Framework</th>
             </tr>
         </thead>
         <tbody>
+        {% for submission in submissions %}
             <tr>
-                <td>1</td>
-                <td>Test Model 1</td>
-                <td>13.5</td>
-                <td>93.4%</td>
+                <td>
+                    {{submission.rank}}
+                </td>
+                <td>
+                    {{submission.model}}
+                    <p class='author'>{{submission.author}}</p>
+                    <p class='description'>
+                        <a href="{{ submission.codeURL }}">source</a>
+                    </p>
+                </td>
+                <td>{{ "{:0.4f}".format(submission.latency) }}</td>
+                <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
+                <td> {{ submission.hardware }} </td>
+                <td> {{ submission.framework }} </td>
             </tr>
+        {% endfor %}
         </tbody>
     </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-latency'>Expand</button>
+    </div>
 </div>

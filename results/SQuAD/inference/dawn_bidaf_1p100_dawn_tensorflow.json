@@ -1,0 +1,11 @@
+{
+    "author": "Stanford DAWN",
+    "framework": "TensorFlow",
+    "codeURL": "https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow",
+    "model": "BiDAF",
+    "hardware": "1 P100 / 512 GB / 56 CPU (dawn[].stanford.edu)",
+    "latency": 638.1,
+    "batchThroughput": 47.19,
+    "f1Score": 75.30024648,
+    "timestamp": "11 August, 2017"
+}

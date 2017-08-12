@@ -13,8 +13,10 @@ iaculis pede, at porttitor quam odio.</p>
             <tr>
                 <th>Rank</th>
                 <th>Model</th>
-                <th>Time (in hours)</th>
-                <th>Accuracy</th>
+                <th>Cost (in USD)</th>
+                <th>Max Accuracy</th>
+                <th>Hardware</th>
+                <th>Framework</th>
             </tr>
         </thead>
         <tbody>
@@ -27,13 +29,21 @@ iaculis pede, at porttitor quam odio.</p>
                     {{submission.model}}
                     <p class='author'>{{submission.author}}</p>
                     <p class='description'>
-                        <a href="{{ submission.url }}">{{ submission.url }} </a>
+                        <a href="{{ submission.codeURL }}">source</a>
                     </p>
                 </td>
-                <td>{{ "{:0.2f}".format(submission.time) }}</td>
+                <td>{{ "${:0.2f}".format(submission.cost) }}</td>
                 <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
+                <td> {{ submission.hardware }} </td>
+                <td> {{ submission.framework }} </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-cost'>Expand</button>
+    </div>
 </div>

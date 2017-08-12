@@ -1,0 +1,11 @@
+{
+    "author": "Stanford DAWN",
+    "framework": "TensorFlow",
+    "codeURL": "https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow",
+    "model": "ResNet 164 (without bottleneck)",
+    "hardware": "1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge])",
+    "latency": 53.620000000000005,
+    "batchThroughput": 4253.242370434981,
+    "accuracy": 93.88,
+    "timestamp": "11 August, 2017"
+}
