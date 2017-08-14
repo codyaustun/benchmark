@@ -28,6 +28,10 @@ body {
         background-color: $brand-primary;
     }
 
+    .navbar-collapse {
+        border: 0 solid transparent;
+    }
+
     .glyphicon {
         color: #ffffff;
     }
@@ -35,6 +39,10 @@ body {
     button {
         border: 0;
         border-radius: 0;
+
+        &:hover, &:focus {
+            background-color: $brand-primary;
+        }
     }
 }
 
