@@ -6,6 +6,6 @@
     "hardware": "1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge])",
     "latency": 705.9,
     "batchThroughput": 45.17,
-    "f1Score": 75.33331513,
+    "f1Score": 0.7533331513,
     "timestamp": "11 August, 2017"
 }

@@ -5,7 +5,7 @@
     "model": "BiDAF",
     "hardware": "1 P100 / 512 GB / 56 CPU (dawn[].stanford.edu)",
     "trainingTime": 3.925348155555555,
-    "f1Score": 73.22474122,
+    "f1Score": 0.7322474122,
     "cost": "N/A",
     "timestamp": "11 August, 2017"
 }

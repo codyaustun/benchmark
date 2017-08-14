@@ -6,6 +6,6 @@
     "hardware": "1 P100 / 512 GB / 56 CPU (dawn[].stanford.edu)",
     "latency": 638.1,
     "batchThroughput": 47.19,
-    "f1Score": 75.30024648,
+    "f1Score": 0.7530024648,
     "timestamp": "11 August, 2017"
 }

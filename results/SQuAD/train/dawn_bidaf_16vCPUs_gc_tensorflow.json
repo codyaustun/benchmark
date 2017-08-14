@@ -5,7 +5,7 @@
     "model": "BiDAF",
     "hardware": "60 GB / 16 CPU (Google Cloud [n1-standard-16])",
     "trainingTime": 6.032310483333334,
-    "f1Score": 73.33766222,
+    "f1Score": 0.7333766222,
     "cost": 3.215221487616667,
     "timestamp": "11 August, 2017"
 }
