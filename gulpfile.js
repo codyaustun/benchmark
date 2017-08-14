@@ -54,7 +54,7 @@ gulp.task('js', function() {
         .pipe(plugins.concat('main.js'))
         .pipe(gulp.dest(config.dest + 'js'))
         .pipe(plugins.rename('main.min.js'))
-        // .pipe(plugins.uglify())
+        .pipe(plugins.uglify())
         .pipe(gulp.dest(config.dest + 'js'));
 });
 
