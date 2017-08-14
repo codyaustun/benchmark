@@ -20,7 +20,7 @@ Threshold = namedtuple('Threshold', ['field', 'cutoff'])
 
 TASK_THRESHOLDS = {
     'CIFAR10': Threshold('accuracy', 93),
-    'SQuAD': Threshold('f1Score', 73)
+    'SQuAD': Threshold('f1Score', 0.73)
 }
 
 
