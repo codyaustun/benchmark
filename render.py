@@ -85,7 +85,8 @@ def render(task, metric, dest, html_dir, results_dir, templates_dir,
     submissions = submissions[:limit]
     for index, submission in enumerate(submissions):
         submission['rank'] = index + 1
-        submission['timestamp'] = datetime.strptime(submission['timestamp'], '%d %B, %Y').strftime('%b %Y')
+        timestamp = datetime.strptime(submission['timestamp'], '%Y-%m-%d')
+        submission['timestamp'] = timestamp.strftime('%b %Y')
 
     with open(template, mode='r') as file:
         template = Template(file.read())

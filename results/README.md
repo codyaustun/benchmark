@@ -2,8 +2,8 @@
 
 Thanks for the interest in DAWNBench!
 
-To add your model to our leaderboard, open a Pull Request to this repository,
-with JSON files in the format outlined below.
+To add your model to our leaderboard, open a Pull Request, with JSON files in the format
+outlined below.
 
 For the training tasks, use the following format:
 ```JSON
@@ -35,7 +35,6 @@ For the inference tasks, use the following format:
 }
 ```
 
-JSON files are named using the format
-`[author name]_[model name]_[hardware]_[framework].json` similar to
+JSON files are named `[author name]_[model name]_[hardware]_[framework].json`, similar to
 `dawn_resnet56_1k80_gc_tensorflow.json`. Each dataset (`CIFAR10` and `SQuAD`)
-has their own `train/` and `inference/` sub-directories.
+has its own `train/` and `inference/` sub-directories.
