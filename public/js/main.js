@@ -12682,10 +12682,6 @@ $(document).ready(function() {
         var action = el.text();
         var rows = $(board + ' tr:gt(4)');
 
-        console.log('here')
-        console.log(board)
-        console.log(action)
-
         if (action == 'Expand') {
             rows.show();
             el.text('Collapse');
