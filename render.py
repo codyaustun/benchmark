@@ -44,15 +44,15 @@ def render(task, metric, dest, html_dir, results_dir, templates_dir,
     elif metric in ['throughput', 'latency']:
         mode = 'inference'
     else:
-        raise NotImplementedError(f'Unknown metric: {metric}')
+        raise NotImplementedError('Unknown metric: %s' % metric)
 
     source = os.path.join(results_dir, task, mode)
-    template = os.path.join(templates_dir, task, f"{metric}.html")
-    dest = dest or os.path.join(html_dir, task, f"{metric}.html")
+    template = os.path.join(templates_dir, task, metric+".html")
+    dest = dest or os.path.join(html_dir, task, metric+".html")
 
-    print(f"Source: {source}")
-    print(f"Template: {template}")
-    print(f"Output: {dest}")
+    print("Source: "+source)
+    print("Template: "+template)
+    print("Output: "+dest)
 
     if not os.path.exists(os.path.dirname(dest)):
         os.makedirs(os.path.dirname(dest))
