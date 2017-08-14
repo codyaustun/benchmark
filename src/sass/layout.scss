@@ -125,19 +125,32 @@ body {
 
 .leaderboard-controls {
     text-align: center;
+
     button {
         background-color: $brand-primary;
         border-radius: 0;
         color: #ffffff;
+
+        &:hover {
+            background-color: darken($brand-primary, 10%);
+            color: #ffffff;
+        }
+
+        &:active, &:focus {
+            background-color: $gray-lighter;
+            color: $brand-primary;
+        }
     }
 
-    button:hover {
-        background-color: darken($brand-primary, 10%);
+    button.disabled {
+        background-color: $brand-primary;
+        border-radius: 0;
         color: #ffffff;
-    }
-
-    button:active {
-        background-color: $gray-lighter;
-        color: $brand-primary;
+        
+        &:hover, &:active, &:focus {
+            background-color: $brand-primary;
+            border-radius: 0;
+            color: #ffffff;
+        }
     }
 }

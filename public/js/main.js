@@ -12647,6 +12647,11 @@ $(document).ready(function() {
         }).done(function (html) {
             $("#leaderboard-time").html(html);
             $("#leaderboard-time tr:gt(" + maxRows + ")").hide();
+            var rows = $("#leaderboard-time tbody tr");
+
+            if ( rows.length <= maxRows ) {
+                $("#leaderboard-time .leaderboard-toggle").addClass('disabled')
+            }
         });
 
         $.ajax({
@@ -12655,6 +12660,11 @@ $(document).ready(function() {
         }).done(function (html) {
             $("#leaderboard-cost").html(html);
             $("#leaderboard-cost tr:gt(" + maxRows + ")").hide();
+            var rows = $("#leaderboard-cost tbody tr");
+
+            if ( rows.length <= maxRows ) {
+                $("#leaderboard-cost .leaderboard-toggle").addClass('disabled')
+            }
         });
 
         $.ajax({
@@ -12663,6 +12673,11 @@ $(document).ready(function() {
         }).done(function (html) {
             $("#leaderboard-latency").html(html);
             $("#leaderboard-latency tr:gt(" + maxRows + ")").hide();
+            var rows = $("#leaderboard-latency tbody tr");
+
+            if ( rows.length <= maxRows ) {
+                $("#leaderboard-latency .leaderboard-toggle").addClass('disabled')
+            }
         });
 
         $.ajax({
@@ -12671,6 +12686,11 @@ $(document).ready(function() {
         }).done(function (html) {
             $("#leaderboard-throughput").html(html);
             $("#leaderboard-throughput tr:gt(" + maxRows + ")").hide();
+            var rows = $("#leaderboard-throughput tbody tr");
+
+            if ( rows.length <= maxRows ) {
+                $("#leaderboard-throughput .leaderboard-toggle").addClass('disabled')
+            }
         });
 
         e.preventDefault();
@@ -12682,14 +12702,16 @@ $(document).ready(function() {
         var action = el.text();
         var rows = $(board + ' tr:gt(4)');
 
-        if (action == 'Expand') {
-            rows.show();
-            el.text('Collapse');
-        } else if (action == 'Collapse') {
-            rows.hide();
-            el.text('Expand');
+        if (!el.hasClass('disabled')) {
+            if (action == 'Expand') {
+                rows.show();
+                el.text('Collapse');
+            } else if (action == 'Collapse') {
+                rows.hide();
+                el.text('Expand');
+            }
+            e.preventDefault();
         }
-        e.preventDefault();
     });
 
     $('#leaderboard-tasks li.active').click();
