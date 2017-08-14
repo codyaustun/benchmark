@@ -8,6 +8,14 @@ body {
     margin-right: auto;
 }
 
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -75px; 
+  height: 75px; 
+  visibility: hidden; 
+}
+
 #navContainer {
     background-color: darken($brand-primary, 10%);
     border: none;
