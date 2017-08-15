@@ -104,7 +104,7 @@ For inference, we have two tasks:
 - **Throughput:** Minimize the total time (or maximize the total throughput) needed to all questions in the
   SQuAD development set with a model that has a total development set F1 score of 0.73 or greater
 
-### JSON Fields
+### JSON Format
 
 Results for the CIFAR10 tasks can be reported using a JSON file with the following fields,
 
