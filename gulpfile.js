@@ -92,6 +92,10 @@ gulp.task('html', ['js', 'css', 'vendors'], function(){
         .pipe(gulp.dest('.'));
 });
 
+gulp.task('render', function() {
+    return plugins.run('./update.sh').exec();
+});
+
 gulp.task('watch', function(){
     // Watch .js files
     gulp.watch('src/**/*.js', ['js']);
@@ -104,6 +108,12 @@ gulp.task('watch', function(){
 
     // Watch image files
     gulp.watch('src/img/*', ['images']);
+
+    // Watch leaderboard dependencies
+    gulp.watch('results/**/*.json', ['render'])
+    gulp.watch('templates/**/*.html', ['render'])
+    gulp.watch('render.py', ['render'])
+    gulp.watch('update.sh', ['render'])
 });
 
-gulp.task('default', ['html', 'images', 'watch']);
+gulp.task('default', ['html', 'images', 'render', 'watch']);
