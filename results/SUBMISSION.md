@@ -2,8 +2,8 @@
 
 Thanks for the interest in DAWNBench!
 
-To add your model to our leaderboard, open a Pull Request, with JSON files in the format
-outlined below.
+To add your model to our leaderboard, open a Pull Request with title `<Model name> || <Task name> || <Author name>`,
+with JSON summary files in the format outlined below.
 
 ## CIFAR10
 
@@ -12,7 +12,7 @@ outlined below.
 We evaluate image classification performance on the [CIFAR10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html).
 
 For training, we have two tasks:
-- Training Time: Minimize the total time taken to train a model that has a test set accuracy of
+- Training Time: Minimize the total time needed to train a model that has a test set accuracy of
   93% or greater
 - Cost: Minimize the total cost of training a model that has a test set accuracy of 93% or greater on
   public cloud infrastructure
@@ -46,7 +46,7 @@ Results for the CIFAR10 tasks can be reported using a JSON file with the followi
 - `misc`: List of other miscellaenous notes, such as learning rate schedule, optimization algorithm,
   etc.
   
-To make this more concrete, consider the following JSON files for training,
+An example of a result file for training,
 ```JSON
 {
     "author": "Stanford DAWN",
