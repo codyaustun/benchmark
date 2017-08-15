@@ -16,7 +16,7 @@ For the training tasks, use the following format:
     "trainingTime": 4.829735400478046,
     "accuracy": 93.17,
     "cost": 4.67035413226227,
-    "timestamp": "11 August, 2017"
+    "timestamp": "2017-08-14"
 }
 ```
 
@@ -31,7 +31,7 @@ For the inference tasks, use the following format:
     "latency": 43.45,
     "batchThroughput": 9289.245702363134,
     "accuracy": 93.45,
-    "timestamp": "11 August, 2017"
+    "timestamp": "2017-08-14"
 }
 ```
 
