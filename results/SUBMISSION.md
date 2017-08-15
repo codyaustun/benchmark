@@ -40,7 +40,7 @@ Results for the CIFAR10 tasks can be reported using a JSON file with the followi
 - `latency`: [Inference tasks only] Reported in milliseconds. Time needed to classify one image
 - `batchThroughput`: [Inference tasks only] Reported in images / second. Throughput
   obtained while classifying all 10,000 images in the CIFAR10 test dataset
-- `accuracy`: Reported in percentage points from 0 to 100. Accuracy of model on CIFAR10 test dataset.
+- `accuracy`: Reported in percentage points from 0 to 100. Accuracy of model on CIFAR10 test dataset
 - `timestamp`: Date of submission in format `yyyy-mm-dd`
 - `logFilename`: [Optional] URL pointing to training / inference logs
 - `misc`: [Optional] List of other miscellaenous notes, such as learning rate schedule, optimization algorithm,
