@@ -12,15 +12,15 @@ with JSON summary files in the format outlined below.
 We evaluate image classification performance on the [CIFAR10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html).
 
 For training, we have two tasks:
-- Training Time: Minimize the total time needed to train a model that has a test set accuracy of
+- *Training Time*: Minimize the total time needed to train a model that has a test set accuracy of
   93% or greater
-- Cost: Minimize the total cost of training a model that has a test set accuracy of 93% or greater on
+- *Cost*: Minimize the total cost of training a model that has a test set accuracy of 93% or greater on
   public cloud infrastructure
 
 For inference, we have two tasks:
-- Latency: Minimize the total time needed to classify a single image with a model that has a test
+- *Latency*: Minimize the total time needed to classify a single image with a model that has a test
   set accuracy of 93% or greater
-- Throughput: Minimize the total time (or maximize the total throughput) needed to classify 8192 images
+- *Throughput*: Minimize the total time (or maximize the total throughput) needed to classify 8192 images
   in the CIFAR10 test set with a model that has a total test set accuracy of 93% or greater
 
 ### JSON Format
@@ -93,15 +93,15 @@ depending on whether the JSON file is reporting training or inference results.
 We evaluate question answering performance on the [SQuAD dataset](https://rajpurkar.github.io/SQuAD-explorer/).
 
 For training, we have two tasks:
-- Training Time: Minimize the total time taken to train a model that has a development set F1 score of
+- *Training Time*: Minimize the total time taken to train a model that has a development set F1 score of
   0.73 or greater
-- Cost: Minimize the total cost of training a model that has a development set F1 score of 0.73 or greater on
+- *Cost*: Minimize the total cost of training a model that has a development set F1 score of 0.73 or greater on
   public cloud infrastructure
 
 For inference, we have two tasks:
-- Latency: Minimize the total time needed to answer a single question with a model that has a development
+- *Latency*: Minimize the total time needed to answer a single question with a model that has a development
   set F1 score of 0.73 or greater
-- Throughput: Minimize the total time (or maximize the total throughput) needed to all questions in the
+- *Throughput*: Minimize the total time (or maximize the total throughput) needed to all questions in the
   SQuAD development set with a model that has a total development set F1 score of 0.73 or greater
 
 ### JSON Fields
