@@ -50,6 +50,11 @@ body {
     text-align: center;
     background-color: $brand-primary;
     color: #ffffff;
+
+    h1 {
+        font-size: 6em;
+        font-weight: 100;
+    }
 }
 
 .card {
@@ -88,7 +93,7 @@ body {
     margin: 20px auto;
     max-width: 250px;
     display: block;
-    border-radius: 0px;
+    border-radius: 20px;
 
     &:hover, &:active, &:focus {
         background-color: darken($brand-primary, 10%);
@@ -133,6 +138,7 @@ body {
 
     td p.date {
         padding: 0.3em;
+        border-radius: 4px;
         color: #ffffff;
         font-size: 0.8em;
         background-color: $gray;
@@ -142,11 +148,13 @@ body {
 .leaderboard-controls {
     text-align: center;
 
-    button {
+    button, button.disable {
         background-color: $brand-primary;
-        border-radius: 0;
         color: #ffffff;
+    
+    }
 
+    button {
         &:hover {
             background-color: darken($brand-primary, 10%);
             color: #ffffff;
@@ -159,13 +167,8 @@ body {
     }
 
     button.disabled {
-        background-color: $brand-primary;
-        border-radius: 0;
-        color: #ffffff;
-        
         &:hover, &:active, &:focus {
             background-color: $brand-primary;
-            border-radius: 0;
             color: #ffffff;
         }
     }

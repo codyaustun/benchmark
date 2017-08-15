@@ -5850,6 +5850,9 @@ body {
   text-align: center;
   background-color: #8c1515;
   color: #ffffff; }
+  #topContainer h1 {
+    font-size: 6em;
+    font-weight: 100; }
 
 .card {
   margin: 30px 0;
@@ -5876,7 +5879,7 @@ body {
   margin: 20px auto;
   max-width: 250px;
   display: block;
-  border-radius: 0px; }
+  border-radius: 20px; }
   .btn-action:hover, .btn-action:active, .btn-action:focus {
     background-color: #600e0e;
     color: #ffffff; }
@@ -5906,27 +5909,22 @@ body {
 
 .leaderboard td p.date {
   padding: 0.3em;
+  border-radius: 4px;
   color: #ffffff;
   font-size: 0.8em;
   background-color: #555555; }
 
 .leaderboard-controls {
   text-align: center; }
-  .leaderboard-controls button {
+  .leaderboard-controls button, .leaderboard-controls button.disable {
     background-color: #8c1515;
-    border-radius: 0;
     color: #ffffff; }
-    .leaderboard-controls button:hover {
-      background-color: #600e0e;
-      color: #ffffff; }
-    .leaderboard-controls button:active, .leaderboard-controls button:focus {
-      background-color: #eeeeee;
-      color: #8c1515; }
-  .leaderboard-controls button.disabled {
+  .leaderboard-controls button:hover {
+    background-color: #600e0e;
+    color: #ffffff; }
+  .leaderboard-controls button:active, .leaderboard-controls button:focus {
+    background-color: #eeeeee;
+    color: #8c1515; }
+  .leaderboard-controls button.disabled:hover, .leaderboard-controls button.disabled:active, .leaderboard-controls button.disabled:focus {
     background-color: #8c1515;
-    border-radius: 0;
     color: #ffffff; }
-    .leaderboard-controls button.disabled:hover, .leaderboard-controls button.disabled:active, .leaderboard-controls button.disabled:focus {
-      background-color: #8c1515;
-      border-radius: 0;
-      color: #ffffff; }
