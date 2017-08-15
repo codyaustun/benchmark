@@ -5,9 +5,48 @@ Thanks for the interest in DAWNBench!
 To add your model to our leaderboard, open a Pull Request, with JSON files in the format
 outlined below.
 
-## Format
+## CIFAR10
 
-For the training tasks, use the following format:
+### Task Description
+
+We evaluate image classification performance on the [CIFAR10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html).
+
+For training, we have two tasks:
+- Training Time: Minimize the total time taken to train a model that has a test set accuracy of
+  93% or greater
+- Cost: Minimize the total cost of training a model that has a test set accuracy of 93% or greater on
+  public cloud infrastructure
+
+For inference, we have two tasks:
+- Latency: Minimize the total time needed to classify a single image with a model that has a test
+  set accuracy of 93% or greater
+- Throughput: Minimize the total time (or maximize the total throughput) needed to classify 8192 images
+  in the CIFAR10 test set with a model that has a total test set accuracy of 93% or greater
+
+### JSON Format
+
+Results for the CIFAR10 tasks can be reported using a JSON file with the following fields,
+
+- `author`: Author name
+- `authorEmail`: Author email
+- `framework`: Framework on which training / inference was performed
+- `codeURL`: [Optional] URL pointing to code for model
+- `model`: Model name
+- `hardware`: A short description of the hardware on which model training / inference was performed
+- `trainingTime`: Training objective. Reported in hours. Time needed to train a model up to
+  93% test set accuracy
+- `cost`: Training objective. Reported in USD ($). Cost of training a model up to 93% test set accuracy
+  on public cloud infrastructure
+- `latency`: Inference objective. Reported in milliseconds. Time needed to classify one image
+- `batchThroughput`: Inference objective. Reported in images / second. Throughput
+  obtained while classifying any 8192 image subset of the CIFAR10 test dataset
+- `accuracy`: Reported in percentage points from 0 to 100. Accuracy of model on CIFAR10 test dataset.
+- `timestamp`: Date of submission in format `yyyy-mm-dd`
+- `logFilename`: [Optional] URL pointing to training / inference logs
+- `misc`: List of other miscellaenous notes, such as learning rate schedule, optimization algorithm,
+  etc.
+  
+To make this more concrete, consider the following JSON files for training,
 ```JSON
 {
     "author": "Stanford DAWN",
@@ -24,7 +63,7 @@ For the training tasks, use the following format:
 }
 ```
 
-For the inference tasks, use the following format:
+And for inference,
 ```JSON
 {
     "author": "Stanford DAWN",
@@ -41,33 +80,55 @@ For the inference tasks, use the following format:
 }
 ```
 
+### Submission Format
+
 JSON files are named `[author name]_[model name]_[hardware]_[framework].json`, similar to
-`dawn_resnet56_1k80_gc_tensorflow.json`. Each dataset (`CIFAR10` and `SQuAD`)
-has its own `train/` and `inference/` sub-directories.
+`dawn_resnet56_1k80_gc_tensorflow.json`. Put the JSON file in the `CIFAR10/train/` or `CIFAR10/inference`
+depending on whether the JSON file is reporting training or inference results.
 
-### Fields
-We describe each of the fields in the submitted JSON file in more detail here.
+## SQuAD
 
-- `author`: Author name.
-- `authorEmail`: Author email.
-- `framework`: Framework on which training / inference was performed.
-- `codeURL`: Optional. URL pointing to code for model.
-- `model`: Model name.
-- `hardware`: A short description of the hardware on which model training / inference was performed.
+### Task Description
+
+We evaluate question answering performance on the [SQuAD dataset](https://rajpurkar.github.io/SQuAD-explorer/).
+
+For training, we have two tasks:
+- Training Time: Minimize the total time taken to train a model that has a development set F1 score of
+  0.73 or greater
+- Cost: Minimize the total cost of training a model that has a development set F1 score of 0.73 or greater on
+  public cloud infrastructure
+
+For inference, we have two tasks:
+- Latency: Minimize the total time needed to answer a single question with a model that has a development
+  set F1 score of 0.73 or greater
+- Throughput: Minimize the total time (or maximize the total throughput) needed to all questions in the
+  SQuAD development set with a model that has a total development set F1 score of 0.73 or greater
+
+### JSON Fields
+
+Results for the CIFAR10 tasks can be reported using a JSON file with the following fields,
+
+- `author`: Author name
+- `authorEmail`: Author email
+- `framework`: Framework on which training / inference was performed
+- `codeURL`: [Optional] URL pointing to code for model
+- `model`: Model name
+- `hardware`: A short description of the hardware on which model training / inference was performed
 - `trainingTime`: Training objective. Reported in hours. Time needed to train a model up to
-  required accuracy target on test / development dataset.
-- `cost`: Training objective. Reported in USD. Cost of training a model up to required accuracy target
-  on public cloud infrastructure.
-- `latency`: Inference objective. Reported in milliseconds. Time needed to classify one image or answer
-  one question.
-- `batchThroughput`: Inference objective. Reported in images / second or questions / second. Throughput
-  obtained while classifying any 8192 image subset of the CIFAR10 test dataset, or answering all the
-  questions in the SQuAD development set.
-- `accuracy`: CIFAR10 only. Reported in percentage points from 0 to 100. Accuracy of model on CIFAR10
-  test dataset.
-- `f1Score`: SQuAD only. Reported in fraction from 0.0 to 1.0. F1 score of model on SQuAD validation
-  dataset.
-- `timestamp`: Date of submission in format `yyyy-mm-dd`.
-- `logFileName`: Optional. URL pointing to training / inference logs.
+  0.73 F1 score on the SQuAD development dataset
+- `cost`: Training objective. Reported in USD ($). Cost of training a model up to 0.73 F1 score on the
+  SQuAD development dataset
+- `latency`: Inference objective. Reported in milliseconds. Time needed to answer one question
+- `batchThroughput`: Inference objective. Reported in questions / second. Throughput
+  obtained while answering all the questions in the SQuAD development set
+- `f1Score`: Reported in fraction from 0.0 to 1.0. F1 score of model on SQuAD development dataset
+- `timestamp`: Date of submission in format `yyyy-mm-dd`
+- `logFilename`: Optional. URL pointing to training / inference logs
 - `misc`: List of other miscellaenous notes, such as learning rate schedule, optimization algorithm,
   etc.
+
+### Submission Format
+
+JSON files are named `[author name]_[model name]_[hardware]_[framework].json`, similar to
+`dawn_bidaf_1k80_gc_tensorflow.json`. Put the JSON file in the `SQuAD/train/` or `SQuAD/inference`
+depending on whether the JSON file is reporting training or inference results.
