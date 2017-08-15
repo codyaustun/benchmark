@@ -20,7 +20,7 @@ For training, we have two tasks:
 For inference, we have two tasks:
 - **Latency:** Minimize the total time needed to classify a single image with a model that has a test
   set accuracy of 93% or greater
-- **Throughput:** Minimize the total time (or maximize the total throughput) needed to classify 8192 images
+- **Throughput:** Minimize the total time (or maximize the total throughput) needed to classify the 10,000 images
   in the CIFAR10 test set with a model that has a total test set accuracy of 93% or greater
 
 ### JSON Format
@@ -39,7 +39,7 @@ Results for the CIFAR10 tasks can be reported using a JSON file with the followi
   on public cloud infrastructure. Computed as `trainingTime * costPerHour`
 - `latency`: [Inference tasks only] Reported in milliseconds. Time needed to classify one image
 - `batchThroughput`: [Inference tasks only] Reported in images / second. Throughput
-  obtained while classifying any 8192 image subset of the CIFAR10 test dataset
+  obtained while classifying all 10,000 images in the CIFAR10 test dataset
 - `accuracy`: Reported in percentage points from 0 to 100. Accuracy of model on CIFAR10 test dataset.
 - `timestamp`: Date of submission in format `yyyy-mm-dd`
 - `logFilename`: [Optional] URL pointing to training / inference logs
