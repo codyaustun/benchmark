@@ -45,7 +45,7 @@ JSON files are named `[author name]_[model name]_[hardware]_[framework].json`, s
 `dawn_resnet56_1k80_gc_tensorflow.json`. Each dataset (`CIFAR10` and `SQuAD`)
 has its own `train/` and `inference/` sub-directories.
 
-## Fields
+### Fields
 We describe each of the fields in the submitted JSON file in more detail here.
 
 - `author`: Author name.
