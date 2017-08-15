@@ -42,7 +42,7 @@ gulp.task('css', function(){
         .pipe(plugins.inject(injectGlobalFiles, injectGlobalOptions))
         .pipe(plugins.inject(injectAppFiles, injectAppOptions))
         .pipe(plugins.sass())
-        .pipe(plugins.csso())
+        // .pipe(plugins.csso())
         .pipe(gulp.dest(config.dest + 'css'));
 });
 
@@ -54,7 +54,7 @@ gulp.task('js', function() {
         .pipe(plugins.concat('main.js'))
         .pipe(gulp.dest(config.dest + 'js'))
         .pipe(plugins.rename('main.min.js'))
-        .pipe(plugins.uglify())
+        // .pipe(plugins.uglify())
         .pipe(gulp.dest(config.dest + 'js'));
 });
 
@@ -72,7 +72,7 @@ gulp.task('vendors', function(){
     return gulp.src(plugins.mainBowerFiles())
         .pipe(plugins.filter('**/*.css'))
         .pipe(plugins.concat('vendors.css'))
-        .pipe(plugins.csso())
+        // .pipe(plugins.csso())
         .pipe(gulp.dest(config.dest + 'css'));
 });
 
