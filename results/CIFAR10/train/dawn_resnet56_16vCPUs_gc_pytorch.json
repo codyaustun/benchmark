@@ -1,5 +1,6 @@
 {
     "author": "Stanford DAWN",
+    "authorEmail": "dawn-bench@cs.stanford.edu",
     "framework": "PyTorch",
     "codeURL": "https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark",
     "model": "ResNet 56",
@@ -7,5 +8,6 @@
     "trainingTime": 29.135555555555555,
     "accuracy": 93.2,
     "cost": 15.529251111111112,
-    "timestamp": "2017-08-14"
+    "timestamp": "2017-08-14",
+    "misc": []
 }

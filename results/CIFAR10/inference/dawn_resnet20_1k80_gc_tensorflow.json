@@ -1,5 +1,6 @@
 {
     "author": "Stanford DAWN",
+    "authorEmail": "dawn-bench@cs.stanford.edu",
     "framework": "TensorFlow",
     "codeURL": "https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow",
     "model": "ResNet 20",
@@ -7,5 +8,6 @@
     "latency": 43.63,
     "batchThroughput": 14584.557318093614,
     "accuracy": 91.92,
-    "timestamp": "2017-08-14"
+    "timestamp": "2017-08-14",
+    "misc": []
 }

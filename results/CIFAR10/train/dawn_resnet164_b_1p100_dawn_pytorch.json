@@ -1,11 +1,13 @@
 {
     "author": "Stanford DAWN",
+    "authorEmail": "dawn-bench@cs.stanford.edu",
     "framework": "PyTorch",
     "codeURL": "https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark",
     "model": "ResNet 164 (with bottleneck)",
-    "hardware": "1 P100 / 512 GB / 56 CPU (dawn[].stanford.edu)",
+    "hardware": "1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster)",
     "trainingTime": 2.1441666666666666,
     "accuracy": 93.05,
     "cost": "N/A",
-    "timestamp": "2017-08-14"
+    "timestamp": "2017-08-14",
+    "misc": []
 }
