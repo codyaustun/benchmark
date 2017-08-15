@@ -83,7 +83,7 @@ And for inference,
 ### Submission Format
 
 JSON files are named `[author name]_[model name]_[hardware]_[framework].json`, similar to
-`dawn_resnet56_1k80_gc_tensorflow.json`. Put the JSON file in the `CIFAR10/train/` or `CIFAR10/inference`
+`dawn_resnet56_1k80_gc_tensorflow.json`. Put the JSON file in the `CIFAR10/train/` or `CIFAR10/inference/`
 depending on whether the JSON file is reporting training or inference results.
 
 ## SQuAD
@@ -130,5 +130,5 @@ Results for the CIFAR10 tasks can be reported using a JSON file with the followi
 ### Submission Format
 
 JSON files are named `[author name]_[model name]_[hardware]_[framework].json`, similar to
-`dawn_bidaf_1k80_gc_tensorflow.json`. Put the JSON file in the `SQuAD/train/` or `SQuAD/inference`
+`dawn_bidaf_1k80_gc_tensorflow.json`. Put the JSON file in the `SQuAD/train/` or `SQuAD/inference/`
 depending on whether the JSON file is reporting training or inference results.
