@@ -5853,6 +5853,10 @@ body {
   #topContainer h1 {
     font-size: 6em;
     font-weight: 100; }
+  #topContainer h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: 100; }
 
 .card {
   margin: 30px 0;
