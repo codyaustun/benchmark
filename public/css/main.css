@@ -5869,6 +5869,18 @@ body {
     .card-headline h2 a.glyphicon:hover {
       text-decoration: none; }
 
+.btn-action {
+  transition: background-color 0.25s;
+  background-color: #8c1515;
+  color: #ffffff;
+  margin: 20px auto;
+  max-width: 250px;
+  display: block;
+  border-radius: 0px; }
+  .btn-action:hover, .btn-action:active, .btn-action:focus {
+    background-color: #600e0e;
+    color: #ffffff; }
+
 #footerContainer {
   margin: 0;
   background-color: #ffffff; }

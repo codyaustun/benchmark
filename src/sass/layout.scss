@@ -81,6 +81,22 @@ body {
 
 }
 
+.btn-action {
+    transition: background-color 0.25s;
+    background-color: $brand-primary;
+    color: #ffffff;
+    margin: 20px auto;
+    max-width: 250px;
+    display: block;
+    border-radius: 0px;
+
+    &:hover, &:active, &:focus {
+        background-color: darken($brand-primary, 10%);
+        color: #ffffff;
+    }
+
+}
+
 #footerContainer {
     margin: 0;
     background-color: #ffffff;
