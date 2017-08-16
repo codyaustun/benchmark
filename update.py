@@ -5,7 +5,7 @@ from collections import namedtuple
 from datetime import datetime
 
 import click
-from jinja2 import Template
+from jinja2 import Environment, loaders
 
 
 KEY_MAP = {
@@ -28,17 +28,7 @@ TASK_THRESHOLDS = {
 NULLS = ['None', 'N/A', 'null']
 
 
-@click.command()
-@click.argument('task')
-@click.argument('metric')
-@click.option('--dest')
-@click.option('--html-dir', '-h', default='leaderboard')
-@click.option('--results-dir', '-r', default='results')
-@click.option('--templates-dir', '-t', default='src/templates')
-@click.option('--limit', '-l', default=10)
-@click.option('--reverse', is_flag=True)
-def render(task, metric, dest, html_dir, results_dir, templates_dir,
-           limit, reverse):
+def load_submissions(directory, task, metric, limit=10, reverse=False):
 
     if metric in ['time', 'cost']:
         mode = 'train'
@@ -47,18 +37,11 @@ def render(task, metric, dest, html_dir, results_dir, templates_dir,
     else:
         raise NotImplementedError('Unknown metric: %s' % metric)
 
-    source = os.path.join(results_dir, task, mode)
-    template = os.path.join(templates_dir, task, metric+".html")
-    dest = dest or os.path.join(html_dir, task, metric+".html")
+    source = os.path.join(directory, task, mode)
+    print("Task: " + task)
+    print("Metric: " + metric)
+    print("Results from " + source)
 
-    print("Source: "+source)
-    print("Template: "+template)
-    print("Output: "+dest)
-
-    if not os.path.exists(os.path.dirname(dest)):
-        os.makedirs(os.path.dirname(dest))
-
-    # Load
     paths = glob(os.path.join(source, "*.json"))
     print("Found {} submissions".format(len(paths)))
     submissions = []
@@ -88,13 +71,34 @@ def render(task, metric, dest, html_dir, results_dir, templates_dir,
         timestamp = datetime.strptime(submission['timestamp'], '%Y-%m-%d')
         submission['timestamp'] = timestamp.strftime('%b %Y')
 
-    with open(template, mode='r') as file:
-        template = Template(file.read())
+    return submissions
 
-    rendered = template.render(submissions=submissions)
-    with open(dest, 'w') as file:
-        file.write(rendered)
+
+@click.command()
+@click.argument('results_dir')
+@click.option('--html-dir', '-h', default='src/html')
+@click.option('--templates-dir', '-t', default='src/templates')
+@click.option('--limit', '-l', default=4)
+def update(results_dir, html_dir, templates_dir, limit):
+    print("Templates: " + templates_dir)
+    print("Output: " + html_dir)
+    env = Environment(loader=loaders.FileSystemLoader(templates_dir))
+
+    # Could use TASK_THRESHOLD.keys()
+    for task in ['CIFAR10', 'SQuAD']:
+        submissions = {}
+        # Could use KEY_MAP.keys()
+        for metric in ['time', 'cost', 'latency', 'throughput']:
+
+            submissions[metric + '_submissions'] = load_submissions(
+                results_dir, task, metric, limit=limit,
+                reverse=(metric == 'throughput'))
+
+        print('Render ' + task + 'Index Page')
+        index = env.get_template(task + '/index.html')
+        with open(os.path.join(html_dir, task + '.html'), 'w') as file:
+            file.write(index.render(task=task, **submissions))
 
 
 if __name__ == '__main__':
-    render()
+    update()

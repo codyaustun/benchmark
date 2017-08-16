@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block nav %}
+    {{ super() }}
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id='leaderboard-tasks'>
+            {% block links %}{% endblock links %}
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right visible-lg-block">
+            <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+{% endblock nav %}
+{% block content %}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" id="info-card">
+                        <div class="card-headline">
+                            <h2>What is DAWNBench?</h2>
+                        </div>
+
+                        <p>DAWNBench is a benchmark suite for end-to-end deep learning training and inference. Computation time and cost are critical resources in building deep models, yet many existing benchmarks focus solely on model accuracy. DAWNBench provides a reference set of common deep learning workloads for quantifying training time, training cost, and inference time across different optimization strategies, model architectures, software frameworks, clouds, and hardware.</p>
+
+                        <div class="card-headline">
+                            <h2>About the v0 Release</h2>
+                        </div>
+                        <p>In this v0 release of DAWNBench (part of the <a href="http://dawn.cs.stanford.edu">Stanford DAWN Project</a>), we are releasing benchmark specifications for image classification (<a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a>) and question answering (<a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a>). To the best of our knowledge, this is the first benchmark to compare end-to-end training and inference across multiple deep learning frameworks and tasks. We have seeded the benchmark leaderboard with an initial set of results, and are <a href="https://github.com/stanford-futuredata/dawn-bench-entries">currently accepting new benchmark results</a>.</p>
+
+                        <div class="card-headline">
+                            <h2>Next Steps</h2>
+                        </div>
+
+                        <p>Future releases of the DAWNBench benchmark suite will include additional tasks (e.g., object detection), datasets (e.g., ImageNet), and objectives (e.g., sample complexity).</p>
+                        <div class="card-headline">
+                            <h2>Join Us</h2>
+                        </div>
+
+                        <p>DAWNBench is part of a larger community conversation about the future of machine learning infrastructure. Sound off on the <a href="TODO">DAWNBench community mailing list</a>.</p>
+                       
+                        <a class='btn btn-action' href="https://github.com/stanford-futuredata/dawn-bench-entries">Submit your results on GitHub</a>
+
+                    </div>
+                        
+                </div>
+                        
+                <div class="col-md-8">
+                    {% block leaderboards %}
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='time'>
+                                Training Time Leaderboard {{ task }}
+                                <a href="#time" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-time' data-metric='time'>
+                            {% block time %}{% endblock time %}
+                        </div>
+
+                    </div>
+
+                    
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='cost'>
+                                Training Cost Leaderboard {{ task }}
+                                <a href="#cost" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-cost' data-metric='cost'>
+                            {% block cost %}{% endblock cost %}
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='latency'>
+                                Inference Latency Leaderboard {{ task }}
+                                <a href="#latency" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-latency' data-metric='latency'> 
+                            {% block latency %}{% endblock latency %}
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='throughput'>
+                                Inference Throughput Leaderboard {{ task }}
+                                <a href="#throughput" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-throughput' data-metric='thoughput'>
+                            {% block throughput %}{% endblock throughput %}
+                        </div>
+
+                    </div>
+
+                    {% endblock leaderboards %}
+                </div>
+            </div>
+{% endblock content %}

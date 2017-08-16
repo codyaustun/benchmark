@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block title %}SQuAD{% endblock title %}
+{% block links%}
+            <li data-task='CIFAR10'><a href="CIFAR10.html">CIFAR10</a></li>
+            <li class="active" data-task='SQuAD'><a href="SQuAD.html" >SQuAD<span class="sr-only">(current)</span></a></li>
+{% endblock %}
+{% block time %}
+                            {% include 'SQuAD/time.html' %} 
+{% endblock time %}
+{% block cost %}
+                            {% include 'SQuAD/cost.html' %}
+{% endblock cost %}
+{% block latency %}
+                            {% include 'SQuAD/latency.html' %}
+{% endblock latency %}
+{% block throughput %}
+                            {% include 'SQuAD/throughput.html' %}
+{% endblock throughput %}

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stanford DAWNBench · SQuAD</title>
+  <!-- inject:css -->
+  <!-- endinject -->
+
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+</head>
+<body>  
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id='navContainer'>
+        <div class="container clearfix">
+            
+    
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+                <a class="navbar-brand" href="#">DAWNBench</a>
+            </div>
+            
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id='leaderboard-tasks'>
+            
+            <li data-task='CIFAR10'><a href="CIFAR10.html">CIFAR10</a></li>
+            <li class="active" data-task='SQuAD'><a href="SQuAD.html" >SQuAD<span class="sr-only">(current)</span></a></li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right visible-lg-block">
+            <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div id="topContainer">
+        <div class="container">
+            <h1>DAWNBench</h1>
+            <h2>An End-to-End Deep Learning Benchmark Suite</h2>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="bodyContainer">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" id="info-card">
+                        <div class="card-headline">
+                            <h2>What is DAWNBench?</h2>
+                        </div>
+
+                        <p>DAWNBench is a benchmark suite for end-to-end deep learning training and inference. Computation time and cost are critical resources in building deep models, yet many existing benchmarks focus solely on model accuracy. DAWNBench provides a reference set of common deep learning workloads for quantifying training time, training cost, and inference time across different optimization strategies, model architectures, software frameworks, clouds, and hardware.</p>
+
+                        <div class="card-headline">
+                            <h2>About the v0 Release</h2>
+                        </div>
+                        <p>In this v0 release of DAWNBench (part of the <a href="http://dawn.cs.stanford.edu">Stanford DAWN Project</a>), we are releasing benchmark specifications for image classification (<a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a>) and question answering (<a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a>). To the best of our knowledge, this is the first benchmark to compare end-to-end training and inference across multiple deep learning frameworks and tasks. We have seeded the benchmark leaderboard with an initial set of results, and are <a href="https://github.com/stanford-futuredata/dawn-bench-entries">currently accepting new benchmark results</a>.</p>
+
+                        <div class="card-headline">
+                            <h2>Next Steps</h2>
+                        </div>
+
+                        <p>Future releases of the DAWNBench benchmark suite will include additional tasks (e.g., object detection), datasets (e.g., ImageNet), and objectives (e.g., sample complexity).</p>
+                        <div class="card-headline">
+                            <h2>Join Us</h2>
+                        </div>
+
+                        <p>DAWNBench is part of a larger community conversation about the future of machine learning infrastructure. Sound off on the <a href="TODO">DAWNBench community mailing list</a>.</p>
+                       
+                        <a class='btn btn-action' href="https://github.com/stanford-futuredata/dawn-bench-entries">Submit your results on GitHub</a>
+
+                    </div>
+                        
+                </div>
+                        
+                <div class="col-md-8">
+                    
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='time'>
+                                Training Time Leaderboard SQuAD
+                                <a href="#time" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-time' data-metric='time'>
+                            
+                            
+<p><b>Objective:</b> Time taken to train reading comprehension model to F1 score of 0.73 or greater on the <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD development dataset</a>.</p>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>Time (in hours)</th>
+                <th>Max F1 Score</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    1
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>3.64</td>
+                <td>0.73</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    2
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>3.81</td>
+                <td>0.73</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    3
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>3.93</td>
+                <td>0.73</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    4
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>6.03</td>
+                <td>0.73</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-time'>Expand</button>
+    </div>
+</div> 
+
+                        </div>
+
+                    </div>
+
+                    
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='cost'>
+                                Training Cost Leaderboard SQuAD
+                                <a href="#cost" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-cost' data-metric='cost'>
+                            
+                            
+<p><b>Objective:</b> Total cost required on public cloud to train image classification model to F1 score of 0.73 or greater on the <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD development dataset</a>.</p> 
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>Cost (in USD)</th>
+                <th>Max F1 Score</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    1
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>$3.22</td>
+                <td>0.73</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    2
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>$3.43</td>
+                <td>0.73</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    3
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>$3.52</td>
+                <td>0.73</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-cost'>Expand</button>
+    </div>
+</div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='latency'>
+                                Inference Latency Leaderboard SQuAD
+                                <a href="#latency" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-latency' data-metric='latency'> 
+                            
+                            
+
+<p><b>Objective:</b> Latency required to answer one <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a> question using a model with F1 score of at least 0.73 on the development dataset.</p>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>1-example Latency (milliseconds)</th>
+                <th>Max F1 Score</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    1
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>100.0000</td>
+                <td>0.76</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    2
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>590.0000</td>
+                <td>0.75</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    3
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>638.1000</td>
+                <td>0.75</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    4
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>705.9000</td>
+                <td>0.75</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-latency'>Expand</button>
+    </div>
+</div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2 id='throughput'>
+                                Inference Throughput Leaderboard SQuAD
+                                <a href="#throughput" class="glyphicon glyphicon-link"></a>
+                            </h2>
+                        </div>
+
+                        <div class="leaderboard" id='leaderboard-throughput' data-metric='thoughput'>
+                            
+                            
+<p><b>Objective:</b> Throughput answering answer every question in the <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD development dataset</a> using a model with F1 score of at least 0.73 on the development dataset.</p>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>Throughput (questions / second)</th>
+                <th>Max F1 Score</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    1
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>47.19</td>
+                <td>0.75</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    2
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>47.19</td>
+                <td>0.75</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    3
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>45.17</td>
+                <td>0.75</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    4
+                    <p class='date'>Aug 2017</p>
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>31.75</td>
+                <td>0.76</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+<div class="leaderboard-controls">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-throughput'>Expand</button>
+    </div>
+</div>
+
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+                
+            
+
+    <nav class="navbar navbar-default" id='footerContainer'>
+        <div class="container clearfix">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

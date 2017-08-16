@@ -8,7 +8,7 @@ var plugins = require("gulp-load-plugins")({
 
 var config = {
     bowerDir: './bower_components',
-    dest: './public/'
+    dest: './public/',
 }
 
 gulp.task('clean', function(cb){
@@ -85,15 +85,18 @@ gulp.task('html', ['js', 'css', 'vendors'], function(){
 
     var injectOptions = {
         addRootSlash: false,
+        ignorePath: ['public']
     };
 
-    return gulp.src('src/html/index.html')
+    return gulp.src('src/html/*.html')
         .pipe(plugins.inject(injectFiles, injectOptions))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest(config.dest));
 });
 
-gulp.task('render', function() {
-    return plugins.run('./update.sh').exec();
+gulp.task('index', ['html'], function() {
+    return gulp.src(config.dest + 'CIFAR10.html')
+        .pipe(plugins.rename('index.html'))
+        .pipe(gulp.dest(config.dest))
 });
 
 gulp.task('watch', function(){
@@ -104,16 +107,10 @@ gulp.task('watch', function(){
     gulp.watch('src/**/*.scss', ['css']);
 
     // Watch .html files
-    gulp.watch('src/html/*.html', ['html']);
+    gulp.watch('src/html/*.html', ['html', 'index']);
 
     // Watch image files
     gulp.watch('src/img/*', ['images']);
-
-    // Watch leaderboard dependencies
-    gulp.watch('results/**/*.json', ['render'])
-    gulp.watch('templates/**/*.html', ['render'])
-    gulp.watch('render.py', ['render'])
-    gulp.watch('update.sh', ['render'])
 });
 
-gulp.task('default', ['html', 'images', 'render', 'watch']);
+gulp.task('default', ['index', 'html', 'images', 'watch']);
