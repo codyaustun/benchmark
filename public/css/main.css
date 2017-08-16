@@ -1055,7 +1055,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -5184,7 +5184,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5297,7 +5297,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5900,6 +5900,10 @@ body {
 @media (min-width: 992px) {
   #leaderboard-metrics {
     float: right; } }
+
+.leaderboard .table > thead:first-child > tr:first-child > th {
+  border-top: 2px solid #eeeeee;
+  border-bottom: 2px solid #eeeeee; }
 
 .leaderboard td, .leaderboard th {
   text-align: center; }
