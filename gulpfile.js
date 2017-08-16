@@ -76,7 +76,14 @@ gulp.task('vendors', function(){
         .pipe(gulp.dest(config.dest + 'css'));
 });
 
+
+
 gulp.task('html', ['js', 'css', 'vendors'], function(){
+    return gulp.src('src/html/**/*.html')
+        .pipe(gulp.dest(config.dest));
+});
+
+gulp.task('inject', ['html'], function() {
     var injectFiles = gulp.src([
         config.dest + 'css/main.css',
         config.dest + 'css/vendors.css',
@@ -84,15 +91,17 @@ gulp.task('html', ['js', 'css', 'vendors'], function(){
     ]);
 
     var injectOptions = {
-        ignorePath: ['public']
+        ignorePath: ['public'],
+        relative: true,
+        addRootSlash: false,
     };
 
-    return gulp.src('src/html/**/*.html')
+    return gulp.src(config.dest +'**/*.html')
         .pipe(plugins.inject(injectFiles, injectOptions))
         .pipe(gulp.dest(config.dest));
 });
 
-gulp.task('index', ['html'], function() {
+gulp.task('index', ['inject'], function() {
     return gulp.src(config.dest + 'CIFAR10.html')
         .pipe(plugins.rename('index.html'))
         .pipe(gulp.dest(config.dest))
@@ -112,4 +121,4 @@ gulp.task('watch', function(){
     gulp.watch('src/img/*', ['images']);
 });
 
-gulp.task('default', ['index', 'html', 'images', 'watch']);
+gulp.task('default', ['index', 'images', 'watch']);
