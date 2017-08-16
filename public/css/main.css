@@ -5924,15 +5924,9 @@ body {
 
 .leaderboard-controls {
   text-align: center; }
-  .leaderboard-controls button, .leaderboard-controls button.disable {
+  .leaderboard-controls a.btn-default {
+    transition: background-color 0.25s;
     background-color: #8c1515;
     color: #ffffff; }
-  .leaderboard-controls button:hover {
-    background-color: #600e0e;
-    color: #ffffff; }
-  .leaderboard-controls button:active, .leaderboard-controls button:focus {
-    background-color: #eeeeee;
-    color: #8c1515; }
-  .leaderboard-controls button.disabled:hover, .leaderboard-controls button.disabled:active, .leaderboard-controls button.disabled:focus {
-    background-color: #8c1515;
-    color: #ffffff; }
+    .leaderboard-controls a.btn-default:hover, .leaderboard-controls a.btn-default:active, .leaderboard-controls a.btn-default:focus {
+      background-color: #600e0e; }

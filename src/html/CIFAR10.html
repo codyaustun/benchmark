@@ -6,7 +6,7 @@
   <!-- inject:css -->
   <!-- endinject -->
 
-  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 </head>
 <body>  
@@ -23,14 +23,14 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span class="glyphicon glyphicon-menu-hamburger"></span>
                 </button>
-                <a class="navbar-brand" href="#">DAWNBench</a>
+                <a class="navbar-brand" href="/">DAWNBench</a>
             </div>
             
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" id='leaderboard-tasks'>
             
-            <li class="active" data-task='CIFAR10'><a href="CIFAR10.html">CIFAR10<span class="sr-only">(current)</span></a></li>
-            <li data-task='SQuAD'><a href="SQuAD.html" >SQuAD</a></li>
+            <li class="active" data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10<span class="sr-only">(current)</span></a></li>
+            <li data-task='SQuAD'><a href="/SQuAD.html" >SQuAD</a></li>
 
         </ul>
 
@@ -196,7 +196,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-time'>Expand</button>
+        <a href='/CIFAR10/train.html' class='btn btn-default'>Expand</a>
     </div>
 </div> 
 
@@ -225,7 +225,7 @@
             <tr>
                 <th>Rank</th>
                 <th>Model</th>
-                <th>Cost (in USD)</th>
+                <th>Cost (USD)</th>
                 <th>Max Accuracy</th>
                 <th>Hardware</th>
                 <th>Framework</th>
@@ -311,7 +311,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-cost'>Expand</button>
+        <a href='/CIFAR10/train.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
 
@@ -425,7 +425,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-latency'>Expand</button>
+        <a href='/CIFAR10/inference.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
 
@@ -539,7 +539,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-throughput'>Expand</button>
+        <a href='/CIFAR10/inference.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
 

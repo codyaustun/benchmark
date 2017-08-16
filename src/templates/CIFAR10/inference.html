@@ -1,24 +1,31 @@
-
-<p><b>Objective:</b> Latency required to classify one <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a> image using a model with test accuracy of 93% or greater.</p>
-
+{% extends "full_table.html" %}
+{% block title %}CIFAR10 Inference{% endblock title %}
+{% block links%}
+            <li class="active" data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10<span class="sr-only">(current)</span></a></li>
+            <li data-task='SQuAD'><a href="/SQuAD.html" >SQuAD</a></li>
+{% endblock %}
+{% block headline %}CIFAR10 Inference{% endblock headline %}
+{% block table %}
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th>Rank</th>
+                <th>Submission Date</th>
                 <th>Model</th>
                 <th>1-example Latency (milliseconds)</th>
+                <th>Throughput (images / second)</th>
                 <th>Max Accuracy</th>
                 <th>Hardware</th>
                 <th>Framework</th>
+                <th>Miscellaneous</th>
             </tr>
         </thead>
         <tbody>
-        {% for submission in latency_submissions %}
+        {% for submission in submissions %}
             <tr>
                 <td>
-                    {{submission.rank}}
                     <p class='date'>{{submission.timestamp}}</p>
+
                 </td>
                 <td>
                     {{submission.model}}
@@ -28,17 +35,14 @@
                     </p>
                 </td>
                 <td>{{ "{:0.4f}".format(submission.latency) }}</td>
+                <td>{{ "{:0.2f}".format(submission.batchThroughput) }}</td>
                 <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
+                <td> {{ submission.misc }} </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-
-<div class="leaderboard-controls">
-    <div class="btn-group" role="group" aria-label="...">
-        <a href='/CIFAR10/inference.html' class='btn btn-default'>Expand</a>
-    </div>
-</div>
+{% endblock table %}

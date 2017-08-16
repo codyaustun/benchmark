@@ -6,7 +6,7 @@
   <!-- inject:css -->
   <!-- endinject -->
 
-  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 </head>
 <body>  
@@ -23,14 +23,14 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span class="glyphicon glyphicon-menu-hamburger"></span>
                 </button>
-                <a class="navbar-brand" href="#">DAWNBench</a>
+                <a class="navbar-brand" href="/">DAWNBench</a>
             </div>
             
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" id='leaderboard-tasks'>
             
-            <li data-task='CIFAR10'><a href="CIFAR10.html">CIFAR10</a></li>
-            <li class="active" data-task='SQuAD'><a href="SQuAD.html" >SQuAD<span class="sr-only">(current)</span></a></li>
+            <li data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10</a></li>
+            <li class="active" data-task='SQuAD'><a href="/SQuAD.html" >SQuAD<span class="sr-only">(current)</span></a></li>
 
         </ul>
 
@@ -106,7 +106,7 @@
             <tr>
                 <th>Rank</th>
                 <th>Model</th>
-                <th>Time (in hours)</th>
+                <th>Time (hours)</th>
                 <th>Max F1 Score</th>
                 <th>Hardware</th>
                 <th>Framework</th>
@@ -127,7 +127,7 @@
                     </p>
                 </td>
                 <td>3.64</td>
-                <td>0.73</td>
+                <td>0.7343</td>
                 <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -145,7 +145,7 @@
                     </p>
                 </td>
                 <td>3.81</td>
-                <td>0.73</td>
+                <td>0.7310</td>
                 <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -163,7 +163,7 @@
                     </p>
                 </td>
                 <td>3.93</td>
-                <td>0.73</td>
+                <td>0.7322</td>
                 <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -181,7 +181,7 @@
                     </p>
                 </td>
                 <td>6.03</td>
-                <td>0.73</td>
+                <td>0.7334</td>
                 <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -192,7 +192,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-time'>Expand</button>
+        <a href='/SQuAD/train.html' class='btn btn-default'>Expand</a>
     </div>
 </div> 
 
@@ -220,7 +220,7 @@
             <tr>
                 <th>Rank</th>
                 <th>Model</th>
-                <th>Cost (in USD)</th>
+                <th>Cost (USD)</th>
                 <th>Max F1 Score</th>
                 <th>Hardware</th>
                 <th>Framework</th>
@@ -241,7 +241,7 @@
                     </p>
                 </td>
                 <td>$3.22</td>
-                <td>0.73</td>
+                <td>0.7334</td>
                 <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -259,7 +259,7 @@
                     </p>
                 </td>
                 <td>$3.43</td>
-                <td>0.73</td>
+                <td>0.7310</td>
                 <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -277,7 +277,7 @@
                     </p>
                 </td>
                 <td>$3.52</td>
-                <td>0.73</td>
+                <td>0.7343</td>
                 <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -288,7 +288,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-cost'>Expand</button>
+        <a href='/SQuAD/train.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
 
@@ -338,7 +338,7 @@
                     </p>
                 </td>
                 <td>100.0000</td>
-                <td>0.76</td>
+                <td>0.7579</td>
                 <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -356,7 +356,7 @@
                     </p>
                 </td>
                 <td>590.0000</td>
-                <td>0.75</td>
+                <td>0.7524</td>
                 <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -374,7 +374,7 @@
                     </p>
                 </td>
                 <td>638.1000</td>
-                <td>0.75</td>
+                <td>0.7530</td>
                 <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -392,7 +392,7 @@
                     </p>
                 </td>
                 <td>705.9000</td>
-                <td>0.75</td>
+                <td>0.7533</td>
                 <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -403,7 +403,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-latency'>Expand</button>
+        <a href='/SQuAD/inference.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
 
@@ -452,7 +452,7 @@
                     </p>
                 </td>
                 <td>47.19</td>
-                <td>0.75</td>
+                <td>0.7524</td>
                 <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -470,7 +470,7 @@
                     </p>
                 </td>
                 <td>47.19</td>
-                <td>0.75</td>
+                <td>0.7530</td>
                 <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -488,7 +488,7 @@
                     </p>
                 </td>
                 <td>45.17</td>
-                <td>0.75</td>
+                <td>0.7533</td>
                 <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -506,7 +506,7 @@
                     </p>
                 </td>
                 <td>31.75</td>
-                <td>0.76</td>
+                <td>0.7579</td>
                 <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
                 <td> TensorFlow </td>
             </tr>
@@ -517,7 +517,7 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-throughput'>Expand</button>
+        <a href='/SQuAD/inference.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
 

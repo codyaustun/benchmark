@@ -84,11 +84,10 @@ gulp.task('html', ['js', 'css', 'vendors'], function(){
     ]);
 
     var injectOptions = {
-        addRootSlash: false,
         ignorePath: ['public']
     };
 
-    return gulp.src('src/html/*.html')
+    return gulp.src('src/html/**/*.html')
         .pipe(plugins.inject(injectFiles, injectOptions))
         .pipe(gulp.dest(config.dest));
 });

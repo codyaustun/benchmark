@@ -160,28 +160,14 @@ body {
 .leaderboard-controls {
     text-align: center;
 
-    button, button.disable {
+    a.btn-default {
+        transition: background-color 0.25s;
         background-color: $brand-primary;
         color: #ffffff;
-    
-    }
 
-    button {
-        &:hover {
-            background-color: darken($brand-primary, 10%);
-            color: #ffffff;
-        }
-
-        &:active, &:focus {
-            background-color: $gray-lighter;
-            color: $brand-primary;
-        }
-    }
-
-    button.disabled {
         &:hover, &:active, &:focus {
-            background-color: $brand-primary;
-            color: #ffffff;
+            background-color: darken($brand-primary, 10%);
         }
+
     }
 }

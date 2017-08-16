@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block nav %}
+    {{ super() }}
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id='leaderboard-tasks'>
+            {% block links %}{% endblock links %}
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right visible-lg-block">
+            <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+{% endblock nav %}
+{% block content %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2>{% block headline %}{% endblock headline %}</h2>
+                        </div>
+                        
+                        <div class="leaderboard">
+                            {% block table %}{% endblock table %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock content %}

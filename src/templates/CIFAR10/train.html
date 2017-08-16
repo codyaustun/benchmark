@@ -1,25 +1,31 @@
-
-<p><b>Objective:</b> Total cost required on public cloud to train image classification model to test accuracy of 93% or greater on <a
- href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a>.</p>
-
+{% extends "full_table.html" %}
+{% block title %}CIFAR10 Training{% endblock title %}
+{% block links%}
+            <li class="active" data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10<span class="sr-only">(current)</span></a></li>
+            <li data-task='SQuAD'><a href="/SQuAD.html" >SQuAD</a></li>
+{% endblock %}
+{% block headline %}CIFAR10 Training{% endblock headline %}
+{% block table %}
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th>Rank</th>
+                <th>Submission Date</th>
                 <th>Model</th>
+                <th>Time (hours)</th>
                 <th>Cost (USD)</th>
                 <th>Max Accuracy</th>
                 <th>Hardware</th>
                 <th>Framework</th>
+                <th>Miscellaneous</th>
             </tr>
         </thead>
         <tbody>
-        {% for submission in cost_submissions %}
+        {% for submission in submissions %}
             <tr>
                 <td>
-                    {{submission.rank}}
                     <p class='date'>{{submission.timestamp}}</p>
+
                 </td>
                 <td>
                     {{submission.model}}
@@ -28,18 +34,19 @@
                         <a href="{{ submission.codeURL }}">source</a>
                     </p>
                 </td>
+                <td>{{ "{:0.2f}".format(submission.trainingTime) }}</td>
+                {% if submission.cost != 'N/A' %}
                 <td>{{ "${:0.2f}".format(submission.cost) }}</td>
+                {% else %}
+                <td>{{ "{}".format(submission.cost) }}</td>
+                {% endif %}
                 <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
+                <td> {{ submission.misc }} </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-
-<div class="leaderboard-controls">
-    <div class="btn-group" role="group" aria-label="...">
-        <a href='/CIFAR10/train.html' class='btn btn-default'>Expand</a>
-    </div>
-</div>
+{% endblock table %}

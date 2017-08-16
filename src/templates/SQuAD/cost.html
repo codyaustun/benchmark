@@ -7,7 +7,7 @@
             <tr>
                 <th>Rank</th>
                 <th>Model</th>
-                <th>Cost (in USD)</th>
+                <th>Cost (USD)</th>
                 <th>Max F1 Score</th>
                 <th>Hardware</th>
                 <th>Framework</th>
@@ -28,7 +28,7 @@
                     </p>
                 </td>
                 <td>{{ "${:0.2f}".format(submission.cost) }}</td>
-                <td>{{ "{:0.2f}".format(submission.f1Score) }}</td>
+                <td>{{ "{:0.4f}".format(submission.f1Score) }}</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
             </tr>
@@ -39,6 +39,6 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-cost'>Expand</button>
+        <a href='/SQuAD/train.html' class='btn btn-default'>Expand</a>
     </div>
 </div>

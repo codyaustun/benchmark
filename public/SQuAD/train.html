@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stanford DAWNBench · SQuAD Training</title>
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- endinject -->
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+</head>
+<body>  
+    <!-- inject:js -->
+    <script src="/js/main.min.js"></script>
+    <!-- endinject -->
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id='navContainer'>
+        <div class="container clearfix">
+            
+    
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+                <a class="navbar-brand" href="/">DAWNBench</a>
+            </div>
+            
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id='leaderboard-tasks'>
+            
+            <li data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10</a></li>
+            <li class="active" data-task='SQuAD'><a href="/SQuAD.html" >SQuAD<span class="sr-only">(current)</span></a></li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right visible-lg-block">
+            <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div id="topContainer">
+        <div class="container">
+            <h1>DAWNBench</h1>
+            <h2>An End-to-End Deep Learning Benchmark Suite</h2>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="bodyContainer">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2>SQuAD Training</h2>
+                        </div>
+                        
+                        <div class="leaderboard">
+                            
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Submission Date</th>
+                <th>Model</th>
+                <th>Time (hours)</th>
+                <th>Cost (USD)</th>
+                <th>Max F1 Score</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+                <th>Miscellaneous</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>6.03</td>
+                
+                <td>$3.22</td>
+                
+                <td>0.7334%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>3.81</td>
+                
+                <td>$3.43</td>
+                
+                <td>0.7310%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>3.64</td>
+                
+                <td>$3.52</td>
+                
+                <td>0.7343%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    BiDAF
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow_qa/bi-att-flow">source</a>
+                    </p>
+                </td>
+                <td>3.93</td>
+                
+                <td>N/A</td>
+                
+                <td>0.7322%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+                
+            
+
+    <nav class="navbar navbar-default" id='footerContainer'>
+        <div class="container clearfix">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

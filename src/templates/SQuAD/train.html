@@ -1,24 +1,31 @@
-
-<p><b>Objective:</b> Time taken to train reading comprehension model to F1 score of 0.73 or greater on the <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD development dataset</a>.</p>
-
+{% extends "full_table.html" %}
+{% block title %}SQuAD Training{% endblock title %}
+{% block links%}
+            <li data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10</a></li>
+            <li class="active" data-task='SQuAD'><a href="/SQuAD.html" >SQuAD<span class="sr-only">(current)</span></a></li>
+{% endblock %}
+{% block headline %}SQuAD Training{% endblock headline %}
+{% block table %}
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th>Rank</th>
+                <th>Submission Date</th>
                 <th>Model</th>
                 <th>Time (hours)</th>
+                <th>Cost (USD)</th>
                 <th>Max F1 Score</th>
                 <th>Hardware</th>
                 <th>Framework</th>
+                <th>Miscellaneous</th>
             </tr>
         </thead>
         <tbody>
-        {% for submission in time_submissions %}
+        {% for submission in submissions %}
             <tr>
                 <td>
-                    {{submission.rank}}
                     <p class='date'>{{submission.timestamp}}</p>
+
                 </td>
                 <td>
                     {{submission.model}}
@@ -28,17 +35,18 @@
                     </p>
                 </td>
                 <td>{{ "{:0.2f}".format(submission.trainingTime) }}</td>
-                <td>{{ "{:0.4f}".format(submission.f1Score) }}</td>
+                {% if submission.cost != 'N/A' %}
+                <td>{{ "${:0.2f}".format(submission.cost) }}</td>
+                {% else %}
+                <td>{{ "{}".format(submission.cost) }}</td>
+                {% endif %}
+                <td>{{ "{:0.4f}".format(submission.f1Score) }}%</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
+                <td> {{ submission.misc }} </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-
-<div class="leaderboard-controls">
-    <div class="btn-group" role="group" aria-label="...">
-        <a href='/SQuAD/train.html' class='btn btn-default'>Expand</a>
-    </div>
-</div>
+{% endblock table %}

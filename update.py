@@ -28,28 +28,23 @@ TASK_THRESHOLDS = {
 NULLS = ['None', 'N/A', 'null']
 
 
-def load_submissions(directory, task, metric, limit=10, reverse=False):
-
-    if metric in ['time', 'cost']:
-        mode = 'train'
-    elif metric in ['throughput', 'latency']:
-        mode = 'inference'
-    else:
-        raise NotImplementedError('Unknown metric: %s' % metric)
-
+def load_submissions(directory, task, mode):
     source = os.path.join(directory, task, mode)
-    print("Task: " + task)
-    print("Metric: " + metric)
     print("Results from " + source)
 
     paths = glob(os.path.join(source, "*.json"))
     print("Found {} submissions".format(len(paths)))
-    submissions = []
+    records = []
     for path in paths:
         with open(path) as file:
             record = json.load(file)
-            submissions.append(record)
+            timestamp = datetime.strptime(record['timestamp'], '%Y-%m-%d')
+            record['timestamp'] = timestamp.strftime('%b %Y')
+            records.append(record)
+    return records
 
+
+def filter_and_rank(submissions, task, metric, limit=10, reverse=False):
     key = KEY_MAP[metric]
     threshold = TASK_THRESHOLDS[task]
 
@@ -68,8 +63,6 @@ def load_submissions(directory, task, metric, limit=10, reverse=False):
     submissions = submissions[:limit]
     for index, submission in enumerate(submissions):
         submission['rank'] = index + 1
-        timestamp = datetime.strptime(submission['timestamp'], '%Y-%m-%d')
-        submission['timestamp'] = timestamp.strftime('%b %Y')
 
     return submissions
 
@@ -88,16 +81,30 @@ def update(results_dir, html_dir, templates_dir, limit):
     for task in ['CIFAR10', 'SQuAD']:
         submissions = {}
         # Could use KEY_MAP.keys()
+        train = load_submissions(results_dir, task, 'train')
+        inference = load_submissions(results_dir, task, 'inference')
         for metric in ['time', 'cost', 'latency', 'throughput']:
 
-            submissions[metric + '_submissions'] = load_submissions(
-                results_dir, task, metric, limit=limit,
+            records = train if metric in ['time', 'cost'] else inference
+            records = [record.copy() for record in records]
+            submissions[metric + '_submissions'] = filter_and_rank(
+                records, task, metric, limit=limit,
                 reverse=(metric == 'throughput'))
 
-        print('Render ' + task + 'Index Page')
+        print('Render ' + task + ' Index Page')
         index = env.get_template(task + '/index.html')
         with open(os.path.join(html_dir, task + '.html'), 'w') as file:
             file.write(index.render(task=task, **submissions))
+
+        print('Render ' + task + ' Training Table')
+        train_table = env.get_template(task + '/train.html')
+        with open(os.path.join(html_dir, task, 'train.html'), 'w') as file:
+            file.write(train_table.render(task=task, submissions=train))
+
+        print('Render ' + task + ' Inference Table')
+        infer_table = env.get_template(task + '/inference.html')
+        with open(os.path.join(html_dir, task, 'inference.html'), 'w') as file:
+            file.write(infer_table.render(task=task, submissions=inference))
 
 
 if __name__ == '__main__':

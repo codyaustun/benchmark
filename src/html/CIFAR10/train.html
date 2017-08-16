@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stanford DAWNBench · CIFAR10 Training</title>
+  <!-- inject:css -->
+  <!-- endinject -->
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+</head>
+<body>  
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id='navContainer'>
+        <div class="container clearfix">
+            
+    
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+                <a class="navbar-brand" href="/">DAWNBench</a>
+            </div>
+            
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id='leaderboard-tasks'>
+            
+            <li class="active" data-task='CIFAR10'><a href="/CIFAR10.html">CIFAR10<span class="sr-only">(current)</span></a></li>
+            <li data-task='SQuAD'><a href="/SQuAD.html" >SQuAD</a></li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right visible-lg-block">
+            <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div id="topContainer">
+        <div class="container">
+            <h1>DAWNBench</h1>
+            <h2>An End-to-End Deep Learning Benchmark Suite</h2>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="bodyContainer">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-headline">
+                            <h2>CIFAR10 Training</h2>
+                        </div>
+                        
+                        <div class="leaderboard">
+                            
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Submission Date</th>
+                <th>Model</th>
+                <th>Time (hours)</th>
+                <th>Cost (USD)</th>
+                <th>Max Accuracy</th>
+                <th>Hardware</th>
+                <th>Framework</th>
+                <th>Miscellaneous</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>73.20</td>
+                
+                <td>$39.01</td>
+                
+                <td>93.06%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>71.16</td>
+                
+                <td>$37.93</td>
+                
+                <td>93.11%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>6.81</td>
+                
+                <td>$6.13</td>
+                
+                <td>93.11%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>7.42</td>
+                
+                <td>$6.68</td>
+                
+                <td>93.11%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>6.58</td>
+                
+                <td>$6.36</td>
+                
+                <td>93.22%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>7.53</td>
+                
+                <td>$7.28</td>
+                
+                <td>93.08%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>2.14</td>
+                
+                <td>N/A</td>
+                
+                <td>93.05%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (with bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>2.27</td>
+                
+                <td>N/A</td>
+                
+                <td>93.15%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>29.49</td>
+                
+                <td>$15.72</td>
+                
+                <td>84.00%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>54.20</td>
+                
+                <td>$28.89</td>
+                
+                <td>93.10%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>10.05</td>
+                
+                <td>$9.05</td>
+                
+                <td>93.50%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>9.69</td>
+                
+                <td>$8.72</td>
+                
+                <td>93.24%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>9.83</td>
+                
+                <td>$9.51</td>
+                
+                <td>93.71%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>7.05</td>
+                
+                <td>$6.82</td>
+                
+                <td>93.10%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>2.64</td>
+                
+                <td>N/A</td>
+                
+                <td>93.99%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 164 (without bottleneck)
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>2.22</td>
+                
+                <td>N/A</td>
+                
+                <td>93.02%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>14.63</td>
+                
+                <td>$7.80</td>
+                
+                <td>92.07%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>11.47</td>
+                
+                <td>$6.11</td>
+                
+                <td>91.88%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>1.43</td>
+                
+                <td>$1.29</td>
+                
+                <td>92.43%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>1.31</td>
+                
+                <td>$1.18</td>
+                
+                <td>91.96%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>1.30</td>
+                
+                <td>$1.25</td>
+                
+                <td>92.09%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>1.72</td>
+                
+                <td>$1.67</td>
+                
+                <td>91.92%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>0.50</td>
+                
+                <td>N/A</td>
+                
+                <td>92.36%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 20
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>0.48</td>
+                
+                <td>N/A</td>
+                
+                <td>92.06%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>29.14</td>
+                
+                <td>$15.53</td>
+                
+                <td>93.20%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>25.94</td>
+                
+                <td>$13.82</td>
+                
+                <td>93.04%</td>
+                <td> 60 GB / 16 CPU (Google Cloud [n1-standard-16]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>3.40</td>
+                
+                <td>$3.06</td>
+                
+                <td>93.08%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>3.38</td>
+                
+                <td>$3.05</td>
+                
+                <td>93.10%</td>
+                <td> 1 K80 / 61 GB / 4 CPU (Amazon EC2 [p2.xlarge]) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>3.26</td>
+                
+                <td>$3.15</td>
+                
+                <td>93.07%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>4.83</td>
+                
+                <td>$4.67</td>
+                
+                <td>93.17%</td>
+                <td> 1 K80 / 30 GB / 8 CPU (Google Cloud) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/pytorch/benchmark">source</a>
+                    </p>
+                </td>
+                <td>1.02</td>
+                
+                <td>N/A</td>
+                
+                <td>93.08%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> PyTorch </td>
+                <td> [] </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <p class='date'>Aug 2017</p>
+
+                </td>
+                <td>
+                    ResNet 56
+                    <p class='author'>Stanford DAWN</p>
+                    <p class='description'>
+                        <a href="https://github.com/stanford-futuredata/dawn-benchmark/tree/master/tensorflow">source</a>
+                    </p>
+                </td>
+                <td>1.06</td>
+                
+                <td>N/A</td>
+                
+                <td>93.01%</td>
+                <td> 1 P100 / 512 GB / 56 CPU (DAWN Internal Cluster) </td>
+                <td> TensorFlow </td>
+                <td> [] </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+                
+            
+
+    <nav class="navbar navbar-default" id='footerContainer'>
+        <div class="container clearfix">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://dawn.cs.stanford.edu/">Stanford DAWN</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

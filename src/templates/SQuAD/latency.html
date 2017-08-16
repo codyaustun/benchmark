@@ -29,7 +29,7 @@
                     </p>
                 </td>
                 <td>{{ "{:0.4f}".format(submission.latency) }}</td>
-                <td>{{ "{:0.2f}".format(submission.f1Score) }}</td>
+                <td>{{ "{:0.4f}".format(submission.f1Score) }}</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
             </tr>
@@ -40,6 +40,6 @@
 
 <div class="leaderboard-controls">
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default leaderboard-toggle" data-board='#leaderboard-latency'>Expand</button>
+        <a href='/SQuAD/inference.html' class='btn btn-default'>Expand</a>
     </div>
 </div>
