@@ -6,9 +6,8 @@
         <thead>
             <tr>
                 <th>Rank</th>
-                <th>Model</th>
                 <th>Time (hours)</th>
-                <th>Max Accuracy</th>
+                <th>Model</th>
                 <th>Hardware</th>
                 <th>Framework</th>
             </tr>
@@ -21,6 +20,7 @@
                     <p class='date'>{{submission.timestamp}}</p>
 
                 </td>
+                <td>{{ "{:0.2f}".format(submission.trainingTime) }}</td>
                 <td>
                     {{submission.model}}
                     <p class='author'>{{submission.author}}</p>
@@ -28,8 +28,6 @@
                         <a href="{{ submission.codeURL }}">source</a>
                     </p>
                 </td>
-                <td>{{ "{:0.2f}".format(submission.trainingTime) }}</td>
-                <td>{{ "{:0.2f}".format(submission.accuracy) }}%</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
             </tr>

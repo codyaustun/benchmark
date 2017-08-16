@@ -6,9 +6,8 @@
         <thead>
             <tr>
                 <th>Rank</th>
-                <th>Model</th>
                 <th>Cost (USD)</th>
-                <th>Max F1 Score</th>
+                <th>Model</th>
                 <th>Hardware</th>
                 <th>Framework</th>
             </tr>
@@ -20,6 +19,7 @@
                     {{submission.rank}}
                     <p class='date'>{{submission.timestamp}}</p>
                 </td>
+                <td>{{ "${:0.2f}".format(submission.cost) }}</td>
                 <td>
                     {{submission.model}}
                     <p class='author'>{{submission.author}}</p>
@@ -27,8 +27,6 @@
                         <a href="{{ submission.codeURL }}">source</a>
                     </p>
                 </td>
-                <td>{{ "${:0.2f}".format(submission.cost) }}</td>
-                <td>{{ "{:0.4f}".format(submission.f1Score) }}</td>
                 <td> {{ submission.hardware }} </td>
                 <td> {{ submission.framework }} </td>
             </tr>
