@@ -71,7 +71,7 @@ def filter_and_rank(submissions, task, metric, limit=10, reverse=False):
 @click.argument('results_dir')
 @click.option('--html-dir', '-h', default='src/html')
 @click.option('--templates-dir', '-t', default='src/templates')
-@click.option('--limit', '-l', default=4)
+@click.option('--limit', '-l', default=3)
 def update(results_dir, html_dir, templates_dir, limit):
     print("Templates: " + templates_dir)
     print("Output: " + html_dir)
