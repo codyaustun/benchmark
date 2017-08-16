@@ -34,7 +34,7 @@ NULLS = ['None', 'N/A', 'null']
 @click.option('--dest')
 @click.option('--html-dir', '-h', default='leaderboard')
 @click.option('--results-dir', '-r', default='results')
-@click.option('--templates-dir', '-t', default='templates')
+@click.option('--templates-dir', '-t', default='src/templates')
 @click.option('--limit', '-l', default=10)
 @click.option('--reverse', is_flag=True)
 def render(task, metric, dest, html_dir, results_dir, templates_dir,
