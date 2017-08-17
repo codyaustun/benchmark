@@ -76,9 +76,11 @@ gulp.task('vendors', function(){
         .pipe(gulp.dest(config.dest + 'css'));
 });
 
+gulp.task('templates', function() {
+    return plugins.run('python update.py').exec();
+});
 
-
-gulp.task('html', ['js', 'css', 'vendors'], function(){
+gulp.task('html', ['js', 'css', 'vendors', 'templates'], function(){
     return gulp.src('src/html/**/*.html')
         .pipe(gulp.dest(config.dest));
 });
@@ -119,6 +121,10 @@ gulp.task('watch', function(){
 
     // Watch image files
     gulp.watch('src/img/*', ['images']);
+
+    // Watch templates
+    gulp.watch('update.py', ['templates']);
+    gulp.watch('src/templates/**/*.html', ['templates']);
 });
 
 gulp.task('default', ['index', 'images', 'watch']);

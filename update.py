@@ -68,7 +68,7 @@ def filter_and_rank(submissions, task, metric, limit=10, reverse=False):
 
 
 @click.command()
-@click.argument('results_dir')
+@click.option('--results_dir', '-r', default='dawn-bench-entries')
 @click.option('--html-dir', '-h', default='src/html')
 @click.option('--templates-dir', '-t', default='src/templates')
 @click.option('--limit', '-l', default=3)
